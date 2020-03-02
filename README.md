@@ -1,7 +1,7 @@
 What we have:
-	* Mockup design for landing page
-	* Mockup design for post page
+* Mockup design for landing page
+* Mockup design for post page
 
 To do: 
-    * Find a decent design
+* Find a decent design
 
