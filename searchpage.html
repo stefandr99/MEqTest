@@ -3,9 +3,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type = "text/css" href="css/searchpagestyle.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div id="content">
+    <div class="nav-container">
+        <nav class="navbar">
+            <span class="navbar-toggle" id="js-navbar-toggle">
+                <i class="fa fa-bars"></i>
+            </span>
+            <a href="#" class="logo">M&#931q</a>
+            <ul class="main-nav" id="js-menu">
+                <li>
+                    <a href="#" class="nav-links">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-links">Problems</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-links">Forum</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-links">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="search-container">
+        <label for="fname">Search:</label>
+        <input type="text" id="searchbar" name="fname">
+    </div>
+
+    <div class="content">
         <hr>
         <div class="post">
             <div class="post-counters">
