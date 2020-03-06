@@ -30,9 +30,9 @@ p{
 
 #buttonpractice:hover{
 	background: rgb(167, 167, 167);
-border: solid #2E343E 1px;
-border-radius: 2px;
-text-decoration: none;
+    border: solid #2E343E 1px;
+    border-radius: 2px;
+    text-decoration: none;
 }
 
 #buttonwrapper{
@@ -58,4 +58,19 @@ text-decoration: none;
 
 .commenttable tr td:first-child{
     text-align: center;
+}
+
+.theory {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.math {
+    overflow: linebreak;
+}
+
+.eq {
+    text-align: center;
+    font-size: 30px;
 }
