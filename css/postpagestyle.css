@@ -6,39 +6,9 @@ p{
     font-size: 20px;
 }
 
-#navbar{
-    background-color:black;
-    --height: 60px;
-}
-
-#content{
-
+.content{
     margin-left: 20%;
     margin-right: 20%;
-}
-
-#button_login{
-    height:50px;
-    margin-right: 10px;
-
-    border-radius: 2px;
-    color: rgb(0, 0, 0);
-
-    font-size: 25px;
-    font-weight: 100;
-    background-color: #ffffff;
-    border: solid rgb(36, 36, 36) 1px;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-
-}
-#button_login:hover{
-	background: rgb(90, 90, 90);
-border: solid #2E343E 1px;
-border-radius: 2px;
-text-decoration: none;
 }
 
 #buttonpractice{
@@ -75,7 +45,6 @@ text-decoration: none;
 .commentwrapper{
     margin-right: 10%;
     margin-left: 10%;
-    
 }
 
 .commentwrapper td{
