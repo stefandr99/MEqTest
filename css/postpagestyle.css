@@ -60,14 +60,17 @@ p{
     text-align: center;
 }
 
-.theory {
+#box {
+    /*width: 100%; asta-i pentru latex*/
+    width: 800px;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-}
-
-.math {
-    overflow: linebreak;
+    flex-direction: column;
+    /*overflow: scroll;*/
+    text-align: center;
+    justify-content: center;
+    line-height:1.8em; 
+    border:solid 1px black;
 }
 
 .eq {
