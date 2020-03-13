@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type = "text/css" href="css/quizstyle.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="navbar">
+            <span class="navbar-toggle" id="js-navbar-toggle">
+                <i class="fa fa-bars"></i>
+            </span>
+            <a href="#" class="logo">M&#931q</a>
+            <ul class="main-nav" id="js-menu">
+                <li>
+                    <a href="#" class="nav-links">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-links">Problems</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-links">Forum</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-links">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <div id="quiz-title">Practice: Pythagorean Theorem</div>
+        <hr>
+        <div id="question-title">Zip line</div>
+        <div id="question-counter"></div>
+        <div id="question-wrapper">
+            <div id="question-desc">A zip line starts on a platform that is 40 meters above the ground. The anchor for the zip line is 198198198 horizontal meters from the base of the platform.</div>
+            <img id="graphic" src="css/resource/quiz/graphic1.png">
+            <div id="actual-question">How long is the zip line?</div>
+            <div id="answer-wrapper">
+                <input id="answer-text" type="text" value="">
+                <div>
+                    <button class="button-normal" id="button-check" type="button">Check</button>
+                </div>
+                <button class="button-normal" id="button-prev" type="button" onclick="">Prev</button>
+                <button class="button-normal" id="button-next" type="button" onclick="">Next</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/quiz_scroller.js"></script>
+</body>
