@@ -11,7 +11,7 @@ p{
     margin-right: 20%;
 }
 
-#buttonpractice{
+.buttonpractice{
     height:40px;
     margin-right: 10px;
 
@@ -28,7 +28,7 @@ p{
     text-align: center;
 }
 
-#buttonpractice:hover{
+.buttonpractice:hover{
 	background: rgb(167, 167, 167);
     border: solid #2E343E 1px;
     border-radius: 2px;
