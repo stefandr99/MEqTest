@@ -1,5 +1,4 @@
 body{
-    background-color: rgb(159, 172, 189);
     font-family: 'Roboto';
 }
 
@@ -15,7 +14,7 @@ body{
     margin-bottom: 20px;
 }
 
-#title_button{
+.title_button{
     height:50px;
     margin-right: 10px;
 
@@ -30,9 +29,8 @@ body{
     display: inline-block;
     cursor: pointer;
     text-align: center;
-
 }
-#title_button:hover{
+.title_button:hover{
 	background: #282D34;
     border: solid #2E343E 1px;
     border-radius: 2px;
@@ -56,24 +54,30 @@ body{
     margin-top: 30vh;
 
 }
+
 #bgimg{
-    z-index: 1;
-}
-#bgimg:before{
-    z-index: 1;
     content: "";
-   position: absolute;
-   z-index: -1;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   background-image: url("mafs.gif");
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-size: 100%;
-    opacity: 0.3;
-    filter:alpha(opacity=40);
+    opacity: 1;
     height:100%;
     width:100%;
+}
+
+#bgimg img{
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+
 }
 
 * {
