@@ -32,7 +32,7 @@
 
     <div class="content">
         <p style="text-align: center; font-size: 40px;">Pythagorean Theorem</p>
-        <hr>
+        <hr id="underpractice">
         <p>
             The Pythagorean theorem, also known as Pythagoras' theorem, is a fundamental relation in Euclidean geometry among the three sides of a right triangle. It states that the area of the square whose side is the hypotenuse (the side opposite the right angle) is equal to the sum of the areas of the squares on the other two sides. 
             <br><br>
@@ -76,33 +76,36 @@
         <div style="text-align: center; align-content: center;">
             <button id="buttonpractice" type="button" onclick="alert('Clicked')">Practice</button>
         </div>
-        <hr>
+        <hr id="underpractice">
         
         <div>
-            <p style="font-weight: bold;">Comments</p>
+            <p id="commtitle">Comments</p>
             <div class="commentwrapper">
-                <table class="commenttable" style="border-collapse: collapse;">
-                    <tr>
-                      <td>
-                          <img src="css/avatar1.png">
-                          <p style="text-align: center;">theLegend27</p>
-                        </td>
-                      <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu turpis egestas pretium aenean pharetra magna ac. </td>
-                    </tr>
-                    <tr>
-                      <td><img src="css/avatar2.png">
-                        <p style="text-align: center;">daigo</p>
-                    </td>
-                      <td>題ぼ夕変さド都並ユ残次過げ宇政ニ学妙はン発学フルユリ入東ごなだぜ握文コ業図ごま知支小レ型圧ニマ受劇ナヲユ行事布益るげ。</td>
-                    </tr>
-                  </table>
-                  <p style="font-size: 25px;">Post comment:</p>
-                  <div style="text-align: center;">
-                    <textarea rows="10" cols="80" name="comment" form="usrform"></textarea>
-                    <div>
-                        <button id="buttonpractice" type="button" onclick="alert('Clicked')">Submit</button>
+                    <div style="display:inline-block;vertical-align:top;">
+                        <img src="css/avatar1.png" alt="img" class="commimg"/>
                     </div>
-                 </div>
+                    <div class="usercomm">theLegend27</div>
+                        
+                    <div class="comentariu">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu turpis egestas pretium aenean pharetra magna ac.</p>
+                    </div>
+
+                    <div style="display:inline-block;vertical-align:top;">
+                        <img src="css/avatar2.png" alt="img" class="commimg">
+                    </div>
+                    <div class= "usercomm">daigo</div>
+
+                    <div class="comentariu">
+                        <p>題ぼ夕変さド都並ユ残次過げ宇政ニ学妙はン発学フルユリ入東ごなだぜ握文コ業図ごま知支小レ型圧ニマ受劇ナヲユ行事布益るげ</p>
+                    </div>
+
+                  <p style="font-size: 25px;">Post comment:</p>
+
+                  <div class="container">
+                    <div class="comment">
+                        <textarea class="textinput" placeholder="Comment"></textarea>
+                    </div>
+                </div>
                  
             </div>
             
