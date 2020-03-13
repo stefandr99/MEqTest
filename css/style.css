@@ -15,7 +15,7 @@ body{
     margin-bottom: 20px;
 }
 
-#title_button{
+.title_button{
     height:50px;
     margin-right: 10px;
 
@@ -32,7 +32,7 @@ body{
     text-align: center;
 
 }
-#title_button:hover{
+.title_button:hover{
 	background: #282D34;
     border: solid #2E343E 1px;
     border-radius: 2px;
