@@ -5,4 +5,5 @@ What we have:
 
 To do: 
 * Find a decent design
-
+* Fix font postpage
+* Fix mathml box on mobile devices 
