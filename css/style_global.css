@@ -55,3 +55,12 @@ p{
     margin-top: 2%;
     margin-bottom: 2%;
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="content"] {
+      margin:0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
