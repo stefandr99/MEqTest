@@ -2,7 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type = "text/css" href="css/quizstyle.css" />
+    <link rel="stylesheet" type = "text/css" href="css/style_quiz.css" />
+    <link rel="stylesheet" type = "text/css" href="css/style_global.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -31,21 +32,21 @@
     </div>
     <div class="content">
         <div id="quiz-title">Practice: Pythagorean Theorem</div>
-        <hr>
+        <hr class="section-divider-bar">
         <div id="question-title">Zip line</div>
         <div id="question-counter"></div>
         <div id="question-wrapper">
             <div id="question-desc">A zip line starts on a platform that is 40 meters above the ground. The anchor for the zip line is 198198198 horizontal meters from the base of the platform.</div>
-            <img class="graphic" src="css/resource/quiz/graphic1.png">
+            <img id="graphic" src="css/resource/quiz/graphic1.png">
             <div id="actual-question">How long is the zip line?</div>
             <div id="answer-wrapper">
                 <div class="submit-box">
                     <input id="answer-text" type="text" value="">
                 </div>
                 <div class="button-wrapper">
-                    <button class="button-normal" id="button-prev" type="button" onclick="">&lt;</button>
-                    <button class="button-normal" id="button-check" type="button">Check</button>
-                    <button class="button-normal" id="button-next" type="button" onclick="">&gt;</button>
+                    <button class="button-regular" id="button-prev" type="button" onclick="">&lt;</button>
+                    <button class="button-regular" id="button-check" type="button">Check</button>
+                    <button class="button-regular" id="button-next" type="button" onclick="">&gt;</button>
                 </div>
             </div>
         </div>
