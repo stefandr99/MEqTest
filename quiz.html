@@ -36,17 +36,20 @@
         <div id="question-counter"></div>
         <div id="question-wrapper">
             <div id="question-desc">A zip line starts on a platform that is 40 meters above the ground. The anchor for the zip line is 198198198 horizontal meters from the base of the platform.</div>
-            <img id="graphic" src="css/resource/quiz/graphic1.png">
+            <img class="graphic" src="css/resource/quiz/graphic1.png">
             <div id="actual-question">How long is the zip line?</div>
             <div id="answer-wrapper">
-                <input id="answer-text" type="text" value="">
-                <div>
-                    <button class="button-normal" id="button-check" type="button">Check</button>
+                <div class="submit-box">
+                    <input id="answer-text" type="text" value="">
                 </div>
-                <button class="button-normal" id="button-prev" type="button" onclick="">Prev</button>
-                <button class="button-normal" id="button-next" type="button" onclick="">Next</button>
+                <div class="button-wrapper">
+                    <button class="button-normal" id="button-prev" type="button" onclick="">&lt;</button>
+                    <button class="button-normal" id="button-check" type="button">Check</button>
+                    <button class="button-normal" id="button-next" type="button" onclick="">&gt;</button>
+                </div>
             </div>
         </div>
     </div>
+    <script src="js/navbar.js"></script>
     <script src="js/quiz_scroller.js"></script>
 </body>

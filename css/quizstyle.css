@@ -37,11 +37,7 @@ p{
 
 #actual-question{
     font-weight: bold;
-}
-
-
-#answer-text{
-    width: 50px;
+    text-align: center;
 }
 
 .button-normal{
@@ -56,10 +52,7 @@ p{
     font-weight: 100;
     background-color: #000000;
     border: solid rgb(36, 36, 36) 1px;
-    text-decoration: none;
-    display: inline-block;
     cursor: pointer;
-    text-align: center;
 }
 
 .button-normnak:hover{
@@ -67,4 +60,44 @@ p{
     border: solid #2E343E 1px;
     border-radius: 2px;
     text-decoration: none;
+}
+
+.graphic {
+    width: 100%;
+    height: auto;
+    max-width: 720px;
+}
+
+.submit-box {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button-wrapper {
+    text-align: center;
+}
+
+#button-check {
+    width: 30%;
+}
+
+#button-prev {
+    width: 10%;
+}
+
+#button-next {
+    width: 10%;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="content"] {
+      margin: 0 0;
+    }
+
+    #question-wrapper {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
