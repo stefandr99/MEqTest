@@ -1,11 +1,12 @@
 To do: 
 * Use SVG instead of images https://www.drawsvg.org/drawsvg.html
-* Make a login page
+* Add register button in login page
 * Add users to db
 * Add more theory pages
 
 
 Done:
+* Make a login page
 * Display comments from db
 
 How to use any of this:
