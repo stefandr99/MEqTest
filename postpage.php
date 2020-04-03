@@ -76,7 +76,7 @@
         
         <p id="comment-title">Comments</p>
         <div class="comment-wrapper">
-                <?php include 'comments_query.php';?>
+                <?php include 'php/comments_query.php';?>
 				
                 <div class="comment-imgwrapper">
                     <img src="css/resource/images/avatar1.png" alt="img" class="comment-img">
