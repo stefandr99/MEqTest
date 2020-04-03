@@ -1,7 +1,8 @@
 To do: 
 * Use SVG instead of images https://www.drawsvg.org/drawsvg.html
 * Add register button in login page
-* Add users to db
+* Integrate login system with custom login page
+* Add a bunch of users to db
 * Add more theory pages
 
 
