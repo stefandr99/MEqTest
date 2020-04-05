@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2020 at 09:21 AM
+-- Generation Time: Apr 05, 2020 at 04:11 PM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.27
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -62,6 +62,27 @@ CREATE TABLE `documents` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `quizzes`
+--
+
+CREATE TABLE `quizzes` (
+  `ID` int(11) NOT NULL,
+  `ID_DOCUMENT` int(11) NOT NULL,
+  `CONTENT` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`CONTENT`)),
+  `CREATED_ON` date NOT NULL,
+  `UPDATED_ON` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `quizzes`
+--
+
+INSERT INTO `quizzes` (`ID`, `ID_DOCUMENT`, `CONTENT`, `CREATED_ON`, `UPDATED_ON`) VALUES
+(1, 555, '[\r\n    {\r\n        \"title\":\"Zip line\", \r\n        \"description\":\"A zip line starts on a platform that is 40 meters above the ground. The anchor for the zip line is 198198198 horizontal meters from the base of the platform.\", \r\n        \"graphicpath\":\"css/resource/quiz/graphic1.png\",\r\n        \"question\":\"How long is the zip line?\",\r\n        \"answer\":\"202\"\r\n    },\r\n    {\r\n        \"title\":\"Treasure hunt\", \r\n        \"description\":\"Peter is making an \'X marks the spot\' flag for a treasure hunt. The flag is made of a square white flag with sides of 121212 centimeters. He will make the \'X\' by stretching red ribbon diagonally from corner to corner.\", \r\n        \"graphicpath\":\"\",\r\n        \"question\":\"How many centimeters of ribbon will Peter need to make the \'X\'?\",\r\n        \"answer\":\"34\"\r\n    }\r\n]', '2020-04-05', '2020-04-05');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -104,6 +125,12 @@ ALTER TABLE `documents`
   ADD UNIQUE KEY `DOCUMENT_PATH` (`DOCUMENT_PATH`);
 
 --
+-- Indexes for table `quizzes`
+--
+ALTER TABLE `quizzes`
+  ADD PRIMARY KEY (`ID`) USING BTREE;
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -126,6 +153,12 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `documents`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `quizzes`
+--
+ALTER TABLE `quizzes`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
