@@ -3,7 +3,6 @@ To do:
 * Decide how to store/access theory pages
 
 ## Medium priority:
-* Create db table structure for quizzes
 * Retrieve quiz information into js
 * Make comment posting work
 * Add 'remember me' option for sessions
@@ -21,6 +20,7 @@ To do:
 
 
 ## Done:
+* Create db table structure for quizzes
 * Integrate login system with custom login page
 * Make a login page
 * Display comments from db
