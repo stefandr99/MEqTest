@@ -1,7 +1,15 @@
 <?php
 require_once "config.php"; //db connection is $dbc
 
-$query = 'SELECT USERNAME, IMAGE_PATH, TEXT from comments c join users u on u.id_user = c.id_user where ID_DOCUMENT = 555';
+$dbc = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check connection
+if($dbc === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+
+$query = 'SELECT USERNAME, IMAGE_PATH, TEXT from comments c 
+			join users u on u.id = c.id_user where ID_DOCUMENT = 1';
 
 $response = @mysqli_query($dbc, $query1);
 $response = @mysqli_query($dbc, $query);
