@@ -1,5 +1,6 @@
 <?php
-require_once "php/config.php";
+require_once 'php/config.php';
+require_once 'php/db_utils/database_conn.php';
 
 session_start();
  
@@ -28,43 +29,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     if(empty($username_err) && empty($password_err)){
-        $sql = 'SELECT id, username, password FROM users WHERE username = ?';
+        $sql = 'SELECT id, username, password FROM users WHERE username = :usrname';
         
-        if($stmt = mysqli_prepare($dbc, $sql)){
-            mysqli_stmt_bind_param($stmt, "s", $param_username);
-            
-            $param_username = $username;
-            
-            if(mysqli_stmt_execute($stmt)){
-                mysqli_stmt_store_result($stmt);
-                
-                // Check if username exists, if yes then verify password
-                if(mysqli_stmt_num_rows($stmt) == 1){                    
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
-                    if(mysqli_stmt_fetch($stmt)){
-                        if(password_verify($password, $hashed_password)){
-                            session_start();
-                            
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
-                            
-                            header("location: php/welcome.php");
-                        } else{
-                            $password_err = "The password you entered was not valid.";
-                        }
-                    }
+        $stmt = BD::obtine_conexiune()->prepare($sql);
+        $stmt -> execute ([
+                'usrname' => $username
+            ]);  
+        $array = $stmt->fetch(PDO::FETCH_ASSOC);
+        $temp_username = $array['username'];
+        $temp_id = $array['id'];
+        $temp_pass = $array['password'];
+          
+        // Check if username exists, if yes then verify password
+        if($temp_username != null){                 
+            if(password_verify($password, $temp_pass)){
+                    session_start();
+
+                    $_SESSION["loggedin"] = true;
+                    $_SESSION["userid"] = $temp_id;
+                    $_SESSION["username"] = $temp_username;                            
+
+                    header("location: php/welcome.php");
                 } else{
-                    $username_err = "No account found with that username.";
+                    $password_err = "The password you entered was not valid.";
                 }
-            } else{
-                echo "Oops! Something went wrong. Please try again later.";
-            }
-            mysqli_stmt_close($stmt);
-        }
+
+        } else{
+            $username_err = "No account found with that username.";
+        }  
     }
-    
-    mysqli_close($dbc);
+    unset($_POST);
+    $conexiune_bd = null;
 }
 ?>
 

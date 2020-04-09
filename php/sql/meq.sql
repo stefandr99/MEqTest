@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2020 at 04:11 PM
+-- Generation Time: Apr 09, 2020 at 05:11 PM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- PHP Version: 7.2.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -33,10 +33,22 @@ CREATE TABLE `comments` (
   `ID_USER` int(11) NOT NULL,
   `ID_DOCUMENT` int(11) NOT NULL,
   `TEXT` varchar(1000) NOT NULL,
-  `created_at` date DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` date DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`ID`, `ID_USER`, `ID_DOCUMENT`, `TEXT`, `created_at`, `updated_at`) VALUES
+(3, 2, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu turpis egestas pretium aenean pharetra magna ac.', '2020-04-09', '2020-04-09 06:34:18'),
+(4, 3, 1, '題ぼ夕変さド都並ユ残次過げ宇政ニ学妙はン発学フルユリ入東ごなだぜ握文コ業図ごま知支小レ型圧ニマ受劇ナヲユ行事布益るげ', '2020-04-09', '2020-04-09 06:34:18'),
+(32, 1, 1, 'test $$ test 1+2+3^2_5 = \\frac{BC}{AB} $$ abc', '2020-04-09', '2020-04-09 12:23:11'),
+(34, 1, 1, '<SCRIPT SRC=http://xss.rocks/xss.js></SCRIPT>', '2020-04-09', '2020-04-09 12:39:53'),
+(37, 4, 1, 'Hey look! It\'s Something!', '2020-04-09', '2020-04-09 14:07:08');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `documents`
@@ -46,9 +58,17 @@ CREATE TABLE `documents` (
   `ID` int(11) NOT NULL,
   `NAME` varchar(255) NOT NULL,
   `DOCUMENT_PATH` varchar(500) NOT NULL,
-  `created_at` date DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` date DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `documents`
+--
+
+INSERT INTO `documents` (`ID`, `NAME`, `DOCUMENT_PATH`, `created_at`, `updated_at`) VALUES
+(1, 'Pythagorean Theorem', '....postpage.php', '2020-04-09', '2020-04-09 06:34:18'),
+(2, 'Another Theorem', '....\register.php', '2020-04-09', '2020-04-09 06:34:18');
 
 -- --------------------------------------------------------
 
@@ -60,10 +80,18 @@ CREATE TABLE `quizzes` (
   `ID` int(11) NOT NULL,
   `ID_DOCUMENT` int(11) NOT NULL,
   `CONTENT` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`CONTENT`)),
-  `created_at` date DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` date DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `quizzes`
+--
+
+INSERT INTO `quizzes` (`ID`, `ID_DOCUMENT`, `CONTENT`, `created_at`, `updated_at`) VALUES
+(1, 1, '[\r\n    {\r\n        \"title\":\"Zip line\", \r\n        \"description\":\"A zip line starts on a platform that is 40 meters above the ground. The anchor for the zip line is 198198198 horizontal meters from the base of the platform.\", \r\n        \"graphicpath\":\"css/resource/quiz/graphic1.png\",\r\n        \"question\":\"How long is the zip line?\",\r\n        \"answer\":\"202\"\r\n    },\r\n    {\r\n        \"title\":\"Treasure hunt\", \r\n        \"description\":\"Peter is making an \'X marks the spot\' flag for a treasure hunt. The flag is made of a square white flag with sides of 121212 centimeters. He will make the \'X\' by stretching red ribbon diagonally from corner to corner.\", \r\n        \"graphicpath\":\"\",\r\n        \"question\":\"How many centimeters of ribbon will Peter need to make the \'X\'?\",\r\n        \"answer\":\"34\"\r\n    }\r\n]', '2020-04-05', '2020-04-05 00:00:00');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
@@ -74,10 +102,19 @@ CREATE TABLE `users` (
   `USERNAME` varchar(30) NOT NULL,
   `PASSWORD` varchar(100) NOT NULL COMMENT 'password hash',
   `IMAGE_PATH` varchar(500) DEFAULT NULL,
-  `created_at` date DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` date DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`ID`, `USERNAME`, `PASSWORD`, `IMAGE_PATH`, `created_at`, `updated_at`) VALUES
+(1, 'admin', '1234', 'css/resource/images/avatar1.png', '2020-04-09', '2020-04-09 06:34:18'),
+(2, 'theLegend27', 'password', 'css/resource/images/avatar1.png', '2020-04-09', '2020-04-09 06:34:18'),
+(3, 'daigo', 'jwong', 'css/resource/images/avatar2.png', '2020-04-09', '2020-04-09 06:34:18'),
+(4, 'something', '$2y$10$ZgqniCYSwipmtLv9wFD7BeOG2.eTBP24nGmnW/z8qb1z1fVdSYdmO', NULL, '2020-04-09', '2020-04-09 06:34:18');
 
 --
 -- Indexes for dumped tables
@@ -87,7 +124,9 @@ CREATE TABLE `users` (
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `ID_DOCUMENT` (`ID_DOCUMENT`),
+  ADD KEY `ID_USER` (`ID_USER`);
 
 --
 -- Indexes for table `documents`
@@ -100,7 +139,8 @@ ALTER TABLE `documents`
 -- Indexes for table `quizzes`
 --
 ALTER TABLE `quizzes`
-  ADD PRIMARY KEY (`ID`) USING BTREE;
+  ADD PRIMARY KEY (`ID`) USING BTREE,
+  ADD KEY `ID_DOCUMENT` (`ID_DOCUMENT`);
 
 --
 -- Indexes for table `users`
@@ -117,97 +157,42 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `quizzes`
 --
 ALTER TABLE `quizzes`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
-
---
--- ADD FOREIGN KEY
---
-
--- 
--- ADD FOREIGN KEY for table 'comments'
---
-alter table `comments`
-	add foreign key (`id_document`) references `documents`(`id`);
-
-
-alter table `comments`
-	add foreign key (`id_user`) references `users`(`id`);
-
--- 
--- ADD FOREIGN KEY for table 'quizzes'
---
-
-alter table `quizzes` 
-	add foreign key (`id_document`) references `documents`(`id`);
-
-
--- -------------------------------------------------------------
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Dumping data for table `documents`
+-- Constraints for dumped tables
 --
 
-INSERT INTO `documents` (`NAME`, `DOCUMENT_PATH`) values ('Pythagorean Theorem', '..\..\postpage.php');
-
-INSERT INTO `documents` (`NAME`, `DOCUMENT_PATH`) values ('Another Theorem', '..\..\register.php');
-
--- -------------------------------------------------------------
+--
+-- Constraints for table `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`ID_DOCUMENT`) REFERENCES `documents` (`ID`),
+  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`ID_USER`) REFERENCES `users` (`ID`);
 
 --
--- Dumping data for table `users`
+-- Constraints for table `quizzes`
 --
-
-INSERT INTO `users` (`USERNAME`, `PASSWORD`, `IMAGE_PATH`) VALUES
-('admin', '1234', 'css/resource/images/avatar1.png'),
-('theLegend27', 'password', 'css/resource/images/avatar1.png'),
-('daigo', 'jwong', 'css/resource/images/avatar2.png'),
-('something', '$2y$10$ZgqniCYSwipmtLv9wFD7BeOG2.eTBP24nGmnW/z8qb1z1fVdSYdmO', NULL);
-
--- -------------------------------------------------------------
-
-
---
--- Dumping data for table `comments`
---
-
-INSERT INTO `comments` (`ID_USER`, `ID_DOCUMENT`, `TEXT`) VALUES
-(1, 1, ''),
-(2, 2, 'LMAO'),
-(2, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu turpis egestas pretium aenean pharetra magna ac.'),
-(2, 1, '題ぼ夕変さド都並ユ残次過げ宇政ニ学妙はン発学フルユリ入東ごなだぜ握文コ業図ごま知支小レ型圧ニマ受劇ナヲユ行事布益るげ');
-
--- --------------------------------------------------------
-
---
--- Dumping data for table `quizzes`
---
-
-INSERT INTO `quizzes` (`ID_DOCUMENT`, `CONTENT`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(1, '[\r\n    {\r\n        \"title\":\"Zip line\", \r\n        \"description\":\"A zip line starts on a platform that is 40 meters above the ground. The anchor for the zip line is 198198198 horizontal meters from the base of the platform.\", \r\n        \"graphicpath\":\"css/resource/quiz/graphic1.png\",\r\n        \"question\":\"How long is the zip line?\",\r\n        \"answer\":\"202\"\r\n    },\r\n    {\r\n        \"title\":\"Treasure hunt\", \r\n        \"description\":\"Peter is making an \'X marks the spot\' flag for a treasure hunt. The flag is made of a square white flag with sides of 121212 centimeters. He will make the \'X\' by stretching red ribbon diagonally from corner to corner.\", \r\n        \"graphicpath\":\"\",\r\n        \"question\":\"How many centimeters of ribbon will Peter need to make the \'X\'?\",\r\n        \"answer\":\"34\"\r\n    }\r\n]', '2020-04-05', '2020-04-05');
-
--- -------------------------------------------------------------
-
-
-
+ALTER TABLE `quizzes`
+  ADD CONSTRAINT `quizzes_ibfk_1` FOREIGN KEY (`ID_DOCUMENT`) REFERENCES `documents` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

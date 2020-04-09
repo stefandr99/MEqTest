@@ -1,17 +1,27 @@
 .comment-wrapper{
-    margin-right: 2%;
-    margin-left: 2%;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="comment-wrapper"] {
+      margin:0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
 .comment-imgwrapper {
-    display: inline-block;
-    vertical-align: top;
+    display: flex;
+    align-items: center;
 }
 
 .comment-img {
     height: 32px; 
     width: 32px;
     border-radius: 50%;
+    margin-right: 5px;
 }
 
 .comment-username {
@@ -26,6 +36,7 @@
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
+    text-align: left;
 }
 
 .comment-boxwrapper {
@@ -42,6 +53,20 @@
     margin: 0px auto;
 }
 
+.textinput {
+    resize: vertical;
+    overflow: auto;
+}
+
 #comment-title {
     margin-bottom: 2%;
 }
+
+.comment-divider-bar{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.1));
+}
+

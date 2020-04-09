@@ -6,7 +6,7 @@
     <link rel="stylesheet" type = "text/css" href="css/style_postpage.css" />
     <link rel="stylesheet" type = "text/css" href="css/style_comment.css" />
     <link rel="stylesheet" type = "text/css" href="css/style_global.css" />
-    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" type = "text/css" href="css/navbar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -69,23 +69,23 @@
         
         <p style="text-align: center; font-size: 30px; margin-top: 2%;">Think you got it? Then try solving the problems! </p>
         <div style="text-align: center; align-content: center;">
-            <button class="button-regular" type="button" onclick="window.open('quiz.html');">Practice</button>
+            <button class="button-regular" type="button" onclick="window.open('quiz.php?id=1');">Practice</button>
         </div>
+        <p id="comment-title">Comments</p>
         <hr class="section-divider-bar">
         
-        
-        <p id="comment-title">Comments</p>
         <div class="comment-wrapper">
-            <?php include 'php/comments.php'; ?>
+            <?php include 'php/comments/comments.php'; ?>
 			
             <p>Post comment:</p>
             <div class="container-boxwrapper">
                 <div class="comment-boxwrapper">
                     <form  method="POST" action="postpage.php">
-                    <input type="hidden" name="actiune" value="adaugaComment" />
-                    <input class="comment-boxwrapper" type="text" placeholder="Comment" name="comment" />
+                    <div class="comment-boxwrapper">
+                        <textarea class="textinput" placeholder="Comment" name="comment"></textarea>
+                    </div>
                     <div style="text-align: center; align-content: center;">
-                        <input class="button-regular" type="submit" value="Post" />
+                        <input name="actiune" class="button-regular" type="submit" value="Post Comment" />
                     </div> 
                     </form>
                 </div>
@@ -96,5 +96,7 @@
     </div>
     <script src="js/navbar.js"></script>
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
 </body>

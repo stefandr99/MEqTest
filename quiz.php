@@ -54,9 +54,11 @@
     <script type="text/javascript">
     var questionArray = <?php 
     //Page requires id set for php to work
-    include 'php/quiz_query.php';  ?>; 
+    include 'php/quiz_query.php';?>; 
     </script>
-    <script src="js/quiz_scroller.js"></script>
+    <script src="js/quiz/quiz_scroller.js"></script>
     <script src="js/navbar.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
     
 </body>

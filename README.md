@@ -3,9 +3,10 @@ To do:
 * Decide how to store/access theory pages
 
 ## Medium priority:
+* Modify all php to follow MVC
 * Make search work
-* Make comment posting work for all users
 * Add 'remember me' option for sessions
+* Add a button for logout
 * Look into php routing
 
 ## Low priority:
@@ -19,8 +20,8 @@ To do:
 * Make comment posting form have equation options like here https://www.codecogs.com/latex/eqneditor.php
 * Make comment posting have a preview
 
-
 ## Done:
+* Make comment posting work for all users
 * Make comment posting work
 * Retrieve quiz information into js
 * Create db table structure for quizzes
@@ -31,4 +32,4 @@ To do:
 How to use any of this:
 
 Start a xampp server or anything of the sort that has a mysql database. Import db using the file in `/php/sql`.
-Test login using `user: something | pass: 123456`
+Test login using `user: something | pass: 123456`; logout by going to `php/stopsession.php`
