@@ -3,7 +3,6 @@ require_once "config.php"; //db connection is $dbc
 
 $query = 'SELECT USERNAME, IMAGE_PATH, TEXT from comments c join users u on u.id_user = c.id_user where ID_DOCUMENT = 555';
 
-$response = @mysqli_query($dbc, $query1);
 $response = @mysqli_query($dbc, $query);
 
 if($response){

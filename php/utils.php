@@ -1,5 +1,5 @@
 <?php 
-function generateSalt() { 
+function generateString() { 
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
     $randomString = ''; 
   

@@ -31,7 +31,7 @@
         </nav>
     </div>
     <div class="content">
-        <div id="quiz-title">Practice: Pythagorean Theorem</div>
+        <div id="quiz-title"></div>
         <hr class="section-divider-bar">
         <div id="question-title"></div>
         <div id="question-counter"></div>
@@ -51,6 +51,12 @@
             </div>
         </div>
     </div>
-    <script src="js/navbar.js"></script>
+    <script type="text/javascript">
+    var questionArray = <?php 
+    //Page requires id set for php to work
+    include 'php/quiz_query.php';  ?>; 
+    </script>
     <script src="js/quiz_scroller.js"></script>
+    <script src="js/navbar.js"></script>
+    
 </body>

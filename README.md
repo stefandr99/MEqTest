@@ -3,9 +3,10 @@ To do:
 * Decide how to store/access theory pages
 
 ## Medium priority:
-* Retrieve quiz information into js
-* Make comment posting work
+* Make search work
+* Make comment posting work for all users
 * Add 'remember me' option for sessions
+* Look into php routing
 
 ## Low priority:
 * Make register/login page responsive
@@ -20,6 +21,8 @@ To do:
 
 
 ## Done:
+* Make comment posting work
+* Retrieve quiz information into js
 * Create db table structure for quizzes
 * Integrate login system with custom login page
 * Make a login page
@@ -27,5 +30,5 @@ To do:
 
 How to use any of this:
 
-Start a xampp server or anything of the sort that has a mysql database. Import db using the file in `/php/mysql`.
+Start a xampp server or anything of the sort that has a mysql database. Import db using the file in `/php/sql`.
 Test login using `user: something | pass: 123456`

@@ -1,4 +1,4 @@
-var questionArray = [
+/*var questionArray = [
     {
         title:"Zip line", 
         description:"A zip line starts on a platform that is 40 meters above the ground. The anchor for the zip line is 198198198 horizontal meters from the base of the platform.", 
@@ -15,7 +15,8 @@ var questionArray = [
     }
     
 ];
-
+*/
+//Requires variable questionArray set from php query  
 var questionSize = questionArray.length;
 var questionTitle = document.getElementById('question-title');
 var questionDesc = document.getElementById('question-desc');
