@@ -76,24 +76,21 @@
         
         <p id="comment-title">Comments</p>
         <div class="comment-wrapper">
-                <?php include 'php/comments_query.php';?>
-				
-                <div class="comment-imgwrapper">
-                    <img src="css/resource/images/avatar1.png" alt="img" class="comment-img">
-                </div>
-                <div class= "comment-username">user</div>
-                <div class="comment-content">
-                    <p>example comment written directly in html</p>
-                </div>
-              <p>Post comment:</p>
-              <div class="container-boxwrapper">
+            <?php include 'php/comments.php'; ?>
+			
+            <p>Post comment:</p>
+            <div class="container-boxwrapper">
                 <div class="comment-boxwrapper">
-                    <textarea class="textinput" placeholder="Comment"></textarea>
+                    <form  method="POST" action="postpage.php">
+                    <input type="hidden" name="actiune" value="adaugaComment" />
+                    <input class="comment-boxwrapper" type="text" placeholder="Comment" name="comment" />
+                    <div style="text-align: center; align-content: center;">
+                        <input class="button-regular" type="submit" value="Post" />
+                    </div> 
+                    </form>
                 </div>
             </div>
-            <div style="text-align: center; align-content: center;">
-                <button class="button-regular" type="button" onclick="alert('Clicked')">Post</button>
-            </div> 
+        
         </div>
         
     </div>
