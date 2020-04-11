@@ -14,7 +14,6 @@ h1 {
 
 .login-container {
   width: 320px;
-  height: 55vh;
   background: rgba(169, 169, 169, 0.295);
   color: white;
   top: 50%;
@@ -45,7 +44,7 @@ h1 {
   height: 40px;
   font-size: 16px;
   color: white;
-  text-shadow: 2px 2px black;
+  text-shadow: 1px 1px black;
 }
 
 ::placeholder {
@@ -77,4 +76,18 @@ h1 {
 
 .login-container a:hover {
   color: yellow;
+}
+
+/*Overwrite browsers css for autofill*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
 }
