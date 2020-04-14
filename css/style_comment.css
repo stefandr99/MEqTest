@@ -39,6 +39,12 @@
     text-align: left;
 }
 
+#comment-preview{
+    margin-left: 6px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
 .comment-boxwrapper {
     float: left;
     width: 100%;

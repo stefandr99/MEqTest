@@ -1,26 +1,32 @@
 To do: 
 ## High priority: 
-* Decide how to store/access theory pages
+* Load page content from database
+* Find a way to upload theory pages
+* Finish search
 
 ## Medium priority:
-* Modify all php to follow MVC
-* Make search work
-* Add 'remember me' option for sessions
+* Make comment preview work properly
+* Try to find a WYSIWYG editor for editing theory pages
 * Add a button for logout
-* Look into php routing
+* Add more theory pages
 
 ## Low priority:
-* Make register/login page responsive
+* Add 'remember me' option for sessions
 * Make register/login page style for error labels
 * Add a bunch of users to db
-* Add more theory pages
 * Use SVG instead of images https://www.drawsvg.org/drawsvg.html
+* Create an API that returns basic information about an equation
+* Add a .htaccess file
 
 ## Crazy stuff:
 * Make comment posting form have equation options like here https://www.codecogs.com/latex/eqneditor.php
 * Make comment posting have a preview
 
 ## Done:
+* Look into php routing
+* Make register/login page responsive
+* Added reset password
+* Modify login/register php to follow MVC
 * Make comment posting work for all users
 * Make comment posting work
 * Retrieve quiz information into js

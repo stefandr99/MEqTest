@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEq</title>
+    <title>MEq - Search</title>
     <link rel="stylesheet" type = "text/css" href="css/style_search.css" />
     <link rel="stylesheet" type = "text/css" href="css/style_global.css" />
     <link rel="stylesheet" href="css/navbar.css" />
@@ -37,7 +37,7 @@
         <input type="text" id="searchbar" name="fname">
     </div>
 
-    <div class="content">
+    <div id="content">
         <hr>
         <div class="post">
             <div class="post-counters">
@@ -57,31 +57,14 @@
                 </div>
                 <div class="post-date">Posted on: 20-5-2021</div>
             </div>
-            
-            
-        </div>
-        <hr>
-        <div class="post">
-            <div class="post-counters">
-                <div>1234 <br><div>upvotes</div></div>
-                <div>5678 <br><div>views</div></div>
-                <div>323 <br><div>comments</div></div>
-            </div>
-            <div class="post-desc">
-                <a href="postpage.html" class="post-title">Pythagorean Theorem</a>
-                <div class="post-shortdesc">Something about the theorem. Stuff stuff aasd asdas avasd asd asdasda dasdasd asd...</div>
-                <div class="post-tags">
-                    <!--<div class="post-tagstext">Tags:</div>-->   
-                    <div class="post-tagwrapper">
-                        <button class="buttontag" type="button" onclick="alert('Clicked')">geometry</button>
-                        <button class="buttontag" type="button" onclick="alert('Clicked')">theorem</button>
-                    </div>
-                </div>
-                <div class="post-date">Posted on: 20-5-2021</div>
-            </div>
-            
+        
             
         </div>
         <hr>
+
+            
+            
+        </div>
     </div>
+    <script src="js/search/ajaxsearch.js"></script>
 </body>

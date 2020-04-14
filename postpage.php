@@ -51,7 +51,7 @@
         
         <div class="theory">
             <div class="figura"> 
-                <img src="css/resource/images/triangle.png" alt="">
+                <img src="data/post/1/triangle.png" alt="">
             </div>  
                 
             <div class="formula">
@@ -82,13 +82,15 @@
             <div class="container-boxwrapper">
                 <div class="comment-boxwrapper">
                     <form  method="POST" action="postpage.php">
-                    <div class="comment-boxwrapper">
-                        <textarea class="textinput" placeholder="Comment" name="comment"></textarea>
-                    </div>
-                    <div style="text-align: center; align-content: center;">
-                        <input name="actiune" class="button-regular" type="submit" value="Post Comment" />
-                    </div> 
+                        <div class="comment-boxwrapper">
+                            <textarea class="textinput" placeholder="Comment" name="comment"></textarea>
+                        </div>
+                        <div id="comment-preview"></div>
+                        <div style="text-align: center; align-content: center;">
+                            <input name="actiune" class="button-regular" type="submit" value="Post Comment" />
+                        </div> 
                     </form>
+                    <button style="text-align:center" class="button-regular" onclick="enablePreview()">Preview</button>
                 </div>
             </div>
         
@@ -98,6 +100,6 @@
     <script src="js/navbar.js"></script>
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
+    <script src="js/mathjax-reset.js"></script>
 
 </body>
