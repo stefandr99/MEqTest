@@ -13,7 +13,7 @@
             <span class="navbar-toggle" id="js-navbar-toggle">
                 <i class="fa fa-bars"></i>
             </span>
-            <a href="#" class="logo">M&#931q</a>
+            <a href="index.html" class="logo">M&#931q</a>
             <ul class="main-nav" id="js-menu">
                 <li>
                     <a href="#" class="nav-links">Home</a>

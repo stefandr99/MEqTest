@@ -1,12 +1,10 @@
 To do: 
 ## High priority: 
-* Load page content from database
 * Find a way to upload theory pages
 * Finish search
-
+* Try to find a WYSIWYG editor for editing theory pages
 ## Medium priority:
 * Make comment preview work properly
-* Try to find a WYSIWYG editor for editing theory pages
 * Add a button for logout
 * Add more theory pages
 
@@ -23,6 +21,7 @@ To do:
 * Make comment posting have a preview
 
 ## Done:
+* Load page content from database
 * Look into php routing
 * Make register/login page responsive
 * Added reset password

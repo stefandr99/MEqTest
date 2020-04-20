@@ -14,7 +14,7 @@
             <span class="navbar-toggle" id="js-navbar-toggle">
                 <i class="fa fa-bars"></i>
             </span>
-            <a href="#" class="logo">M&Sigma;q</a>
+            <a href="index.html" class="logo">M&Sigma;q</a>
             <ul class="main-nav" id="js-menu">
                 <li>
                     <a href="#" class="nav-links">Home</a>
@@ -47,7 +47,7 @@
             </div>
             <div class="post-desc">
                 <a href="postpage.html" class="post-title">Pythagorean Theorem</a>
-                <div class="post-shortdesc">Something about the theorem. Stuff stuff aasd asdas avasd asd asdasda dasdasd asd...</div>
+                <div class="post-shortdesc">This thing is just to preview the html...</div>
                 <div class="post-tags">
                     <!--<div class="post-tagstext">Tags:</div>-->   
                     <div class="post-tagwrapper">
@@ -61,9 +61,7 @@
             
         </div>
         <hr>
-
-            
-            
+        
         </div>
     </div>
     <script src="js/search/ajaxsearch.js"></script>

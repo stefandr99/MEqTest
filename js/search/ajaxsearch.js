@@ -2,7 +2,7 @@ var textBox = document.getElementById('searchbar');
 resultContainer = document.getElementById('content');
 
 var ajax = null;
-var loadedUsers = 0;
+var page = 0;
 
 textBox.onkeyup = function() {
 	var val = this.value;
@@ -39,7 +39,7 @@ function searchForData(value, isLoadMoreMode) {
 			}
 		}
     }
-    ajax.open('GET', 'search_ajax.php?title=' +  value +  '&startFrom=' +  loadedUsers , true);
+    ajax.open('GET', '/meq/php/search/search_ajax.php?title=' +  value +  '&page=' +  page , true);
 	ajax.send();
 }
 
@@ -61,7 +61,7 @@ function createElement(data){
 
     var link = document.createElement("a");
     link.className = "post-title";
-    link.href = 'postpage.php'; //fetch id and add ?id=...
+    link.href = 'postpage.php?id=' + data['ID']; //fetch id and add ?id=...
     link.innerHTML = data['NAME'];
     descDiv.appendChild(link);
 
@@ -77,7 +77,7 @@ function createElement(data){
 
 function clearResult() {
 	resultContainer.innerHTML = "";
-	loadedUsers = 0;
+	page = 0;
 }
 
 function noPosts() {

@@ -1,9 +1,9 @@
 <?php
-require_once 'php/config.php';
-require_once 'php/db_utils/database_conn.php';
+require_once '../config.php';
+require_once '../db_utils/database_conn.php';
 
 $postTitle = $_GET['title'];
-$startFrom = $_GET['startFrom'];
+$startFrom = $_GET['page'];
 
 $username = trim(htmlspecialchars($postTitle));
 $startFrom = filter_var($startFrom, FILTER_VALIDATE_INT);
