@@ -61,7 +61,7 @@ function createElement(data){
 
     var link = document.createElement("a");
     link.className = "post-title";
-    link.href = 'postpage.php?id=' + data['ID']; //fetch id and add ?id=...
+    link.href = 'postpage.php?id=' + data['ID'];
     link.innerHTML = data['NAME'];
     descDiv.appendChild(link);
 

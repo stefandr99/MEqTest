@@ -1,23 +1,8 @@
-/*var questionArray = [
-    {
-        title:"Zip line", 
-        description:"A zip line starts on a platform that is 40 meters above the ground. The anchor for the zip line is 198198198 horizontal meters from the base of the platform.", 
-        graphicpath:"css/resource/quiz/graphic1.png",
-        question:"How long is the zip line?",
-        answer:"202"
-    },
-    {
-        title:"Treasure hunt", 
-        description:"Peter is making an 'X marks the spot' flag for a treasure hunt. The flag is made of a square white flag with sides of 121212 centimeters. He will make the 'X' by stretching red ribbon diagonally from corner to corner.", 
-        graphicpath:"",
-        question:"How many centimeters of ribbon will Peter need to make the 'X'?",
-        answer:"34"
-    }
-    
-];
-*/
-//Requires variable questionArray set from php query  
-var questionSize = questionArray.length;
+var requestURI = '/meq/php/quiz/quiz_query.php?id=';
+
+var questionArray = []
+var questionSize = 0;
+var parentDocumentName = document.getElementById('quiz-title');
 var questionTitle = document.getElementById('question-title');
 var questionDesc = document.getElementById('question-desc');
 var questionSentence = document.getElementById('actual-question');
@@ -26,7 +11,37 @@ var counter = document.getElementById('question-counter');
 var answerBox = document.getElementById('answer-text');
 var checkButton = document.getElementById('button-check');
 
-var currentIndex = 0;
+var ajax = null;
+function getData(value){
+    if (ajax && typeof ajax.abort === 'function') {
+		ajax.abort(); // abort previous requests
+	}
+    ajax = new XMLHttpRequest(); //php response will be in this variable
+	ajax.onreadystatechange = function() {
+		if (ajax.readyState === 4 && ajax.status === 200) {
+            var json = JSON.parse(ajax.responseText);
+			if (json === false || json === null) {
+                noData();
+			} else {
+                parentDocumentName.innerHTML = json['NAME'];
+                showData(json['CONTENT']);
+			}
+		}
+    }
+    ajax.open('GET', requestURI +  value, true);
+	ajax.send();
+}
+
+function noData(){
+    questionDesc.innerHTML = 'Could not load quiz';
+}
+
+function showData(data){
+    questionArray = JSON.parse(data);
+    questionSize = questionArray.length;
+    setQuestionInfo();
+    setCheckAnswer();
+}
 
 
 function setCheckAnswer(){
@@ -37,6 +52,8 @@ function setCheckAnswer(){
             alert("Incorrect");
     })
 }
+
+var currentIndex = 0;
 
 function setQuestionInfo(){
     questionTitle.innerHTML = questionArray[currentIndex].title;
@@ -59,5 +76,7 @@ document.getElementById("button-prev").addEventListener("click", function(){
     setQuestionInfo();
 });
 
-setQuestionInfo();
-setCheckAnswer();
+//runner code
+var url = new URL(window.location.href);
+var id = url.searchParams.get("id");
+getData(id);
