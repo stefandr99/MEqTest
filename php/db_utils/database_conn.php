@@ -7,6 +7,10 @@ class BD{
             self::$conexiune_bd = new PDO('mysql:host='.DB_SERVER.';dbname='.DB_NAME, DB_USERNAME, DB_PASSWORD);
         }
         return self::$conexiune_bd;
-    }    
+    }
+
+    public static function opreste_conexiune(){
+        self::$conexiune_bd = NULL;
+    }
 }
 ?>

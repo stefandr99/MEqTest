@@ -26,4 +26,4 @@ if ($actiune == "Post Comment"){
 if(isset($_GET['id']))
     $control = new $controller("afiseazaComments", array($_GET['id']));
 
-$conexiune_bd = null;
+BD::opreste_conexiune();
