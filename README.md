@@ -1,18 +1,19 @@
 To do: 
 ## High priority: 
-* Find a way to upload theory pages
-* Finish search
-* Try to find a WYSIWYG editor for editing theory pages
+* Add an editor for quizzes 
+* Create a profile page for users
+* Create an admin panel
+
 ## Medium priority:
 * Make comment preview work properly
 * Add a button for logout
 * Add more theory pages
 
 ## Low priority:
+* Polish search page style and add additional info
 * Add 'remember me' option for sessions
 * Make register/login page style for error labels
 * Add a bunch of users to db
-* Use SVG instead of images https://www.drawsvg.org/drawsvg.html
 * Create an API that returns basic information about an equation
 * Add a .htaccess file
 
@@ -21,6 +22,8 @@ To do:
 * Make comment posting have a preview
 
 ## Done:
+* Find a way to upload theory pages
+* Create a WYSIWYG editor -- amazing work by Stefan
 * Load page content from database
 * Look into php routing
 * Make register/login page responsive
