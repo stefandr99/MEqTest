@@ -15,6 +15,7 @@ class CPostContent{
             
             $view = new VPostContent(null, null);
             $view->viewUploadPage();
+            $view->viewQuizEditor();
         }
     }
 }
