@@ -91,51 +91,54 @@ class VPostContent
                 Background: <input type="color" onchange="execCmdWithArgument('hiliteColor', this.value);">
 
             </div>
-                <div contenteditable class="upload-content" name="docContent" id="docContent" style="border:solid 1px #999; padding:10px;"></div>
-                <input type="hidden" id="docContent_hidden" name="docContent" required="required" />
+            <div contenteditable class="upload-content" name="docContent" id="docContent" style="border:solid 1px #999; padding:10px;"></div>
+            <input type="hidden" id="docContent_hidden" name="docContent" required="required" />
 
-                <div style="font-size: 20px; text-align: center; align-content: center;" ,>
-                    <label for="docContent">We recommend you to draw the figure <a href="https://www.drawsvg.org/drawsvg.html" target="_blank">here</a> and save it in svg format.</label><br>
-                </div>
-                <div style="text-align: center; align-content: center;">
-                    <p>
-                        <input class="button-regular" name="docContent[]" type="file" id="image" accept="image/*" multiple="multiple" onchange="showFiles()" />
-                    </p>
-                    <p>
-                </div>
-                </div>
-                <div style="text-align: center; align-content: center;">
-            <input name="upload" id="subButton" class="button-regular" type="submit" value="Upload page" />
-        </div>
-            </form>
-
+            <div style="font-size: 20px; text-align: center; align-content: center;" ,>
+                <label for="docContent">We recommend you to draw the figure <a href="https://www.drawsvg.org/drawsvg.html" target="_blank">here</a> and save it in svg format.</label><br>
+            </div>
+            <div style="text-align: center; align-content: center;">
+                <p>
+                    <input class="button-regular" name="docContent[]" type="file" id="image" accept="image/*" multiple="multiple" onchange="showFiles()" />
+                </p>
+                <p>
+            </div>
+            </div>
+            <div style="text-align: center; align-content: center;">
+                <input name="upload" id="subButton" class="button-regular" type="submit" value="Upload page" />
+                <input name="docQuiz" type="text" style="display:none" id="hidden-quiz-JSON" />
+         </div> 
+        </form>
         
+
+
+
 
     <?php }
 
     public function viewQuizEditor()
     { ?>
         <hr>
-        <div id="quiz-upload-wrapper" style="text-align: center; align-content: center;">
-            <div class="quiz-upload-entry">
-                <label>Title:</label>
-                <input class="quiz-upload-title" type="text" placeholder="Question title" required="required"><br>
-                <label>Description:</label>
-                <input class="quiz-upload-desc" type="text" placeholder="Description about the question"><br>
-                <label>Figure:</label>
-                <input type="text" placeholder="image..."><br>
-                <label>Question:</label>
-                <input class="quiz-upload-question" type="text" placeholder="Question sentence" required="required"><br>
-                <label>Answer:</label>
-                <input class="quiz-upload-answer" type="text" placeholder="Correct answer for the question" required="required"><br>
+        <div style="text-align: center; align-content: center;">
+            <div id="quiz-upload-wrapper">
+                <!-- <div class="quiz-upload-entry">
+                    <label>Title:</label>
+                    <input class="quiz-upload-title" type="text" placeholder="Question title" required="required"><br>
+                    <label>Description:</label>
+                    <input class="quiz-upload-desc" type="text" placeholder="Description about the question"><br>
+                    <label>Figure:</label>
+                    <input type="text" placeholder="image..."><br>
+                    <label>Question:</label>
+                    <input class="quiz-upload-question" type="text" placeholder="Question sentence" required="required"><br>
+                    <label>Answer:</label>
+                    <input class="quiz-upload-answer" type="text" placeholder="Correct answer for the question" required="required"><br>
+                </div>-->
             </div>
 
-        <button onclick="addQuestion()">Add question</button>
-
+            <button onclick="addQuestion()">Add question</button>
         </div>
         <hr>
-       
-        
+
 
         </body>
         <script>
@@ -177,10 +180,11 @@ class VPostContent
 
             function prepareDiv() {
                 document.getElementById("docContent_hidden").value = document.getElementById("docContent").innerHTML;
+                questionsToJSON();
             }
         </script>
         <script src="js/quiz/quiz_editor.js"></script>
-    <?php }
+<?php }
 }
 
 ?>

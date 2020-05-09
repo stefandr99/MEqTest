@@ -9,13 +9,11 @@ class CPostContent{
             $view = new VPostContent($this->model->getPostContent($params[0]), $params[0]);
             $view->viewPostContent();
         }
-        else if($action === 'insertContent') {
-            
-            $this->model->insertDocument($params[0], $params[1]);
-            
+        else if($action === 'insertContent') {        
+            $this->model->insertDocument($params[0], $params[1], $params[2]);  
             $view = new VPostContent(null, null);
             $view->viewUploadPage();
-            $view->viewQuizEditor();
+            $view->viewQuizEditor();  
         }
     }
 }

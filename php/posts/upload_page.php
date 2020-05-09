@@ -5,13 +5,18 @@ require_once 'MPostContent.php';
 require_once 'VPostContent.php';
 
 session_start();
-$title = $content = null;
+$title = $content = $quiz = null;
+
 if(isset($_POST["docTitle"]))
     $title = $_POST["docTitle"];
 if(isset($_POST["docContent"]))
     $content = $_POST["docContent"];
+if(isset($_POST["docQuiz"]))
+    $quiz = $_POST["docQuiz"];
 
-$controller = new CPostContent('insertContent', array($title, $content));
+$controller = new CPostContent('insertContent', array($title, $content, $quiz));
+$_POST = array();
 BD::opreste_conexiune();
+
 
 ?>

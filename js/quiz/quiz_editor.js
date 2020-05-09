@@ -1,9 +1,12 @@
 var questionArray = []
 var questionWrapper = document.getElementById("quiz-upload-wrapper");
+var inputJSON = document.getElementById("hidden-quiz-JSON");
+var arrlen = 0;
 
 class QuestionElement{
-    constructor()
+    constructor(id)
     {
+        this.id = id;
         this.title = "";
         this.description = "";
         this.image = "";
@@ -11,27 +14,60 @@ class QuestionElement{
         this.answer = "";
 
         this.mainElem = null;
+        this.fileManager = null;
         this.createHTML();
     }
 
-    removeFromArray(){
-        console.log('ok');
-        questionArray = questionArray.filter(q => q === this);
+
+
+    createFileManager(){
+        let fileManager = document.createElement('input');
+        this.fileManager = fileManager;
+
+        this.fileManager.setAttribute('class', 'button-regular');
+        this.fileManager.setAttribute('type', 'file');
+        this.fileManager.setAttribute('id', 'image' + this.id);
+        this.fileManager.setAttribute('accept', 'image/*');
+        this.fileManager.setAttribute('onchange', 'addFiles(' + this.id + ')');
+        //class="button-regular" type="file" id="image" accept="image/*" onchange="addFiles()" />
     }
 
-    createHTML(){
+    setEventListeners(){
+        this.mainElem.addEventListener('change', (event) => {
+            switch (event.target.className) {
+                case "quiz-upload-title":
+                    this.title = event.target.value;
+                    break;
+                case "quiz-upload-desc":
+                    this.description = event.target.value;
+                    break;
+                case "quiz-upload-image":
+                    this.image = event.target.value;
+                    break;
+                case "quiz-upload-question":
+                    this.question = event.target.value;
+                    break;
+                case "quiz-upload-answer":
+                    this.answer = event.target.value;
+                    break;
+                default:
+                    break;
+            }
+        });
+
+    }
+
+    createHTML() {
         let mainElem = document.createElement('div');
         mainElem.className = "quiz-upload-entry";
         this.mainElem = mainElem;
-        
+        this.createFileManager();
+
         let titleElem = document.createElement('input');
         titleElem.className = "quiz-upload-title";
 
         let descElem = document.createElement('input');
         descElem.className = "quiz-upload-desc";
-
-        let imgElem = document.createElement('input');
-        imgElem.className = "quiz-upload-image";
 
         let questionElem = document.createElement('input');
         questionElem.className = "quiz-upload-question";
@@ -41,46 +77,29 @@ class QuestionElement{
 
         let button = document.createElement('button');
         button.innerText = 'Delete';
-        
-        this.mainElem.addEventListener('change', (event) => {
-            switch(event.target.className){
-                case "quiz-upload-title":
-                    this.title = event.target.value;
-                    console.log(this.title);
-                    break;
-                case "quiz-upload-desc":
-                    this.description = event.target.value;
-                    console.log(this.description);
-                    break;
-                case "quiz-upload-image":
-                    this.image = event.target.value;
-                    console.log(this.image);
-                    break;
-                case "quiz-upload-question":
-                    this.question= event.target.value;
-                    console.log(this.question);
-                    break;
-                case "quiz-upload-answer":
-                    this.answer= event.target.value;
-                    console.log(this.answer);
-                    break;
-                default:
-                    break;
-            }
-        });
+        button.setAttribute('value', this.id);
+        button.setAttribute('onclick', 'removeQuestion(this.value)');
+        button.setAttribute('class', 'button-delete-question');
+
+        this.setEventListeners();
 
         mainElem.appendChild(titleElem);
         mainElem.innerHTML += '<br>';
         mainElem.appendChild(descElem);
         mainElem.innerHTML += '<br>';
-        mainElem.appendChild(imgElem);
+        mainElem.appendChild(this.fileManager);
         mainElem.innerHTML += '<br>';
         mainElem.appendChild(questionElem);
         mainElem.innerHTML += '<br>';
         mainElem.appendChild(answerElem);
+        mainElem.innerHTML += '<br>';
+        mainElem.appendChild(button);
         mainElem.innerHTML += '<hr>';
+
         questionWrapper.appendChild(mainElem);
     }
+
+    
 }
 
 class Question{
@@ -88,19 +107,28 @@ class Question{
     {
         this.title = title;
         this.description = desc;
-        this.image = img;
+        this.graphicpath = img;
         this.question = question;
         this.answer = answer;
     }
 }
 
-
 function addQuestion(){
-    let question = new QuestionElement();
+    let question = new QuestionElement(arrlen);
+    arrlen++;
     questionArray.push(question);
 }
 
-function arrayToJSON(){
+function removeQuestion(id){
+    console.log('ok');
+    id = parseInt(id);
+    let question = questionArray.find(q => q.id === id);
+    if(question.mainElem !== null)
+        question.mainElem.remove();
+    questionArray = questionArray.filter(q => !(q.id === id));
+}
+
+function questionsToJSON(){
     let uploadArray = [];
     for(i=0; i<questionArray.length; i++){
         uploadArray.push(new Question(questionArray[i].title, 
@@ -109,10 +137,23 @@ function arrayToJSON(){
                                     questionArray[i].question, 
                                     questionArray[i].answer));
     }
-    var x = JSON.stringify(uploadArray);
-    console.log(x);
+    var data = JSON.stringify(uploadArray);
+    inputJSON.value = data;
+    console.log(data);
 }
 
-function removeQuestion(){
 
+
+function addFiles(id) {
+    let fileManager = document.getElementById('image' + id);
+    let question = questionArray.find(q => q.id === id);
+    if (fileManager.files.length > 0) {
+        for (var i = 0; i <= fileManager.files.length - 1; i++) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                question.image = e.target.result;
+            };
+            reader.readAsDataURL(fileManager.files.item(i));
+        }
+    }
 }
