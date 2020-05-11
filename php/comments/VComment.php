@@ -13,7 +13,8 @@
             } else{
                 while($row = $this->comms->fetch(PDO::FETCH_ASSOC)){
                     echo '<div class="comment-imgwrapper">';
-                    echo '<img src="' . $row['IMAGE_PATH'] . '" alt="img" class="comment-img"/> <div class="comment-username">' . $row['USERNAME'] . '</div></div>';
+                    echo '<a class="user-container" href=profilepage.php?id=' . $row['ID_USER'] . '>';
+                    echo '<img src="' . $row['IMAGE_PATH'] . '" alt="img" class="comment-img"/> <div class="comment-username">' . $row['USERNAME'] . '</div></div></a>';
                     echo '<div class="comment-content"><p>' . htmlspecialchars($row['TEXT'], ENT_QUOTES, 'UTF-8') . '</p></div>';
                     echo '<hr class="comment-divider-bar">';
                 }

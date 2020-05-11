@@ -11,12 +11,13 @@ class MPostContent{
         return $stmt;
     }
 
-    public function insertDocument($title, $content, $quiz)
+    public function insertDocument($title, $content, $quiz, $userid)
     {
-        $sql = 'INSERT INTO documents (name, description, content) values (:name, :description, :content)';
+        $sql = 'INSERT INTO documents (name, user_id, description, content) values (:name, :userid, :description, :content)';
         $stmt = BD::obtine_conexiune()->prepare($sql);
         if ($stmt->execute([
             'name' => $title,
+            'userid' => $userid,
             'description' => strtok(strip_tags($content), '.'),
             'content' => $content
         ])) {

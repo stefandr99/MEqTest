@@ -17,6 +17,17 @@
     align-items: center;
 }
 
+.user-container {
+    color: darkslateblue;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.user-container:hover {
+    text-decoration: underline;
+}
+
 .comment-img {
     height: 32px; 
     width: 32px;

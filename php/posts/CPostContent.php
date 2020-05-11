@@ -10,7 +10,7 @@ class CPostContent{
             $view->viewPostContent();
         }
         else if($action === 'insertContent') {        
-            $this->model->insertDocument($params[0], $params[1], $params[2]);  
+            $this->model->insertDocument($params[0], $params[1], $params[2], $params[3]);  
             $view = new VPostContent(null, null);
             $view->viewUploadPage();
             $view->viewQuizEditor();  

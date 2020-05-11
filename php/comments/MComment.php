@@ -15,7 +15,7 @@ class MComment{
     }
 
     public function obtineComments($id_document){ // read
-        $sql = "SELECT USERNAME, IMAGE_PATH, TEXT from comments c 
+        $sql = "SELECT USERNAME, ID_USER, IMAGE_PATH, TEXT from comments c 
                     join users u on u.id = c.id_user where id_document = :id_document";
         $cerere = BD::obtine_conexiune()->prepare($sql);
         $cerere->execute([

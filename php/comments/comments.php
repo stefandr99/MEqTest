@@ -27,3 +27,4 @@ if(isset($_GET['id']))
     $control = new $controller("afiseazaComments", array($_GET['id']));
 
 BD::opreste_conexiune();
+?>

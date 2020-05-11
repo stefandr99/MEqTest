@@ -14,7 +14,7 @@ if(isset($_POST["docContent"]))
 if(isset($_POST["docQuiz"]))
     $quiz = $_POST["docQuiz"];
 
-$controller = new CPostContent('insertContent', array($title, $content, $quiz));
+$controller = new CPostContent('insertContent', array($title, $content, $quiz, $_SESSION['userid']));
 $_POST = array();
 BD::opreste_conexiune();
 
