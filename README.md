@@ -1,7 +1,6 @@
 To do: 
 ## High priority: 
 * Add an editor for quizzes 
-* Create a profile page for users
 * Create an admin panel
 
 ## Medium priority:
@@ -36,6 +35,7 @@ To do:
 * Integrate login system with custom login page
 * Make a login page
 * Display comments from db
+* Create a profile page for users
 
 How to use any of this:
 
