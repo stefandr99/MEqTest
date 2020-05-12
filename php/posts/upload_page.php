@@ -1,22 +1,28 @@
 <?php
-require_once 'php/config.php';
-require_once 'CPostContent.php';
-require_once 'MPostContent.php';
-require_once 'VPostContent.php';
+    require_once 'php/config.php';
+    require_once 'CPostContent.php';
+    require_once 'MPostContent.php';
+    require_once 'VPostContent.php';
 
-session_start();
-$title = $content = $quiz = null;
+    session_start();
 
-if(isset($_POST["docTitle"]))
-    $title = $_POST["docTitle"];
-if(isset($_POST["docContent"]))
-    $content = $_POST["docContent"];
-if(isset($_POST["docQuiz"]))
-    $quiz = $_POST["docQuiz"];
+    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && isset($_SESSION['userid']))
+    {
+        $title = $content = $quiz = null;
+        if(isset($_POST["docTitle"]))
+            $title = $_POST["docTitle"];
+        if(isset($_POST["docContent"]))
+            $content = $_POST["docContent"];
+        if(isset($_POST["docQuiz"]))
+            $quiz = $_POST["docQuiz"];
+        $controller = new CPostContent('insertContent', array($title, $content, $quiz, $_SESSION['userid']));
 
-$controller = new CPostContent('insertContent', array($title, $content, $quiz, $_SESSION['userid']));
-$_POST = array();
-BD::opreste_conexiune();
+        BD::opreste_conexiune();
+    } 
+    else 
+    {   
+        header("location: search.php");
+    }
 
 
 ?>

@@ -1,5 +1,6 @@
 <?php 
 require_once __DIR__ . "/../db_utils/database_conn.php";
+ob_start();
 
 class MPostContent{
     public function getPostContent($id_document){ 
@@ -13,7 +14,7 @@ class MPostContent{
 
     public function insertDocument($title, $content, $quiz, $userid)
     {
-        $sql = 'INSERT INTO documents (name, user_id, description, content) values (:name, :userid, :description, :content)';
+        $sql = 'INSERT INTO documents (name, id_user, description, content) values (:name, :userid, :description, :content)';
         $stmt = BD::obtine_conexiune()->prepare($sql);
         if ($stmt->execute([
             'name' => $title,
@@ -28,15 +29,17 @@ class MPostContent{
                 $row = $stmt1->fetch(PDO::FETCH_ASSOC);
                 $id_document = $row['maxi'];
             }
-
             $sql2 = 'INSERT INTO quizzes (id_document, quiz_title, content) values (:id_document, "Quiz", :content)';
             $stmt2 = BD::obtine_conexiune()->prepare($sql2);
+            $test = false;
             if ($stmt2->execute([
                 'id_document' => $id_document,
                 'content' => $quiz
             ])) {
-                header("location: postpage.php?id=" . $row['maxi']);
+                $test = true;
+                header("location: /postpage.php?id=" . $id_document);
             }
         }
     }
 }
+?>
