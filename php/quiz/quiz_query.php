@@ -2,6 +2,10 @@
 require_once __DIR__ . "/../config.php";
 require_once __DIR__ . "/../db_utils/database_conn.php";
 
+session_start();
+
+$pageid = null;
+
 if(isset($_GET["id"])){
         $pageid = $_GET["id"];
         $quizcontent = '';

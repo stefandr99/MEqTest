@@ -4,6 +4,8 @@ resultContainer = document.getElementById('content');
 var ajax = null;
 var page = 0;
 
+var requestURI = '/meq/php/search/search_ajax.php?title=';
+
 textBox.onkeyup = function() {
 	var val = this.value;
 	val = val.replace(/^\s|\s $/, "");
@@ -39,7 +41,7 @@ function searchForData(value, isLoadMoreMode) {
 			}
 		}
     }
-    ajax.open('GET', '/meq/php/search/search_ajax.php?title=' +  value +  '&page=' +  page , true);
+    ajax.open('GET', requestURI +  value +  '&page=' +  page , true);
 	ajax.send();
 }
 

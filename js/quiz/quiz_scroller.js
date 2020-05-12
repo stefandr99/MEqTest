@@ -1,4 +1,5 @@
 var requestURI = '/meq/php/quiz/quiz_query.php?id=';
+var postURI = '/meq/php/quiz/quiz_updatescore.php'
 
 var questionArray = []
 var questionSize = 0;
@@ -32,6 +33,20 @@ function getData(value){
 	ajax.send();
 }
 
+function postData(){
+    if (ajax && typeof ajax.abort === 'function') {
+		ajax.abort();
+	}
+    ajax = new XMLHttpRequest();
+	ajax.onreadystatechange = function() {
+		if (ajax.readyState === 4 && ajax.status === 200) {
+            alert('Score updated');
+		}
+    }
+    ajax.open('POST', postURI, true);
+	ajax.send();
+}
+
 function noData(){
     questionDesc.innerHTML = 'Could not load quiz';
 }
@@ -43,11 +58,17 @@ function showData(data){
     setCheckAnswer();
 }
 
+var correctAnswers = 0;
 
 function setCheckAnswer(){
     checkButton.addEventListener("click", function(){
-        if(answerBox.value == questionAnswer)
+        if(answerBox.value == questionAnswer){
+            correctAnswers++;
+            if(correctAnswers == questionArray.length){
+                postData(); //update user score
+            }
             alert("Correct");
+        }
         else
             alert("Incorrect");
     })
