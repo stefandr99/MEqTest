@@ -8,28 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="nav-container">
-        <nav class="navbar">
-            <span class="navbar-toggle" id="js-navbar-toggle">
-                <i class="fa fa-bars"></i>
-            </span>
-            <a href="index.html" class="logo">M&#931q</a>
-            <ul class="main-nav" id="js-menu">
-                <li>
-                    <a href="#" class="nav-links">Home</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-links">Problems</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-links">Forum</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-links">Login</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <?php include "navbar.php"; ?>    
+
     <div class="content">
         <div id="quiz-title"></div>
         <hr class="section-divider-bar">

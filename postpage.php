@@ -12,28 +12,7 @@
 
 </head>
 <body>
-    <div class="nav-container">
-        <nav class="navbar">
-            <span class="navbar-toggle" id="js-navbar-toggle">
-                <i class="fa fa-bars"></i>
-            </span>
-            <a href="index.html" class="logo">M&Sigma;q</a>
-            <ul class="main-nav" id="js-menu">
-                <li>
-                    <a href="#" class="nav-links">Home</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-links">Problems</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-links">Forum</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-links">Login</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <?php include 'navbar.php'; ?>
 
     <div class="content">
     <?php include 'php/posts/content_query.php'; ?>

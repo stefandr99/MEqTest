@@ -13,7 +13,10 @@
   session_start();
   if ( isset($_SESSION["loggedin"]) && isset($_SESSION["userid"]) ) { ?>
             <li>
-                <a href="profilepage.php?id= <?php $_SESSION["userid"]?>" class="nav-links">Profile</a>
+                <a href="profilepage.php?id= <?php echo $_SESSION["userid"]?>" class="nav-links">Profile</a>
+            </li>
+            <li>
+                <a href="php/userAccount/logout.php" class="nav-links">Logout</a>
             </li>
         </ul>
     </nav>
