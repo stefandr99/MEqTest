@@ -27,7 +27,7 @@ class MUser {
             $_SESSION['start'] = time();
             $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);   
             
-            header("location: ../welcome.php");
+            header("location: ../../index.html");
         } 
         else {
             echo "Something went wrong. Please try again later.";
@@ -59,7 +59,7 @@ class MUser {
                     $_SESSION['start'] = time();
                     $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);                       
 
-                    header("location: ../welcome.php");
+                    header("location: ../../index.html");
             } else{
                 //$password_err = "The password you entered was not valid.";
                 return "password";

@@ -1,3 +1,11 @@
+.MathJax_Display {
+    /*
+    this is done to override mathjax center align
+    sorry
+    */
+    text-align: inherit !important; 
+}
+
 #box {
     /*width: 100%; asta-i pentru latex*/
     width: 800px;

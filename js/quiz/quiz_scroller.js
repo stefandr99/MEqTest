@@ -48,7 +48,7 @@ function postData(){
 }
 
 function noData(){
-    questionDesc.innerHTML = 'Could not load quiz';
+    parentDocumentName.textContent = 'Quiz does not exist';
 }
 
 function showData(data){
@@ -83,6 +83,8 @@ function setQuestionInfo(){
     questionGraphic.src = questionArray[currentIndex].graphicpath;
     questionAnswer = questionArray[currentIndex].answer;
     counter.innerHTML = "(" + (currentIndex + 1) + "/" + questionSize + ")";
+    let answer = document.getElementById('answer-wrapper');
+    answer.setAttribute('style', 'display:block');    
 }
 
 document.getElementById("button-next").addEventListener("click", function(){

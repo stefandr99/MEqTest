@@ -77,7 +77,7 @@ require_once __DIR__ . "/../db_utils/database_conn.php";
 
         public function autentificaUser() {
             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-                header("location: ../welcome.php");
+                header("location: ../../index.html");
                 exit;
             }
             //if($_SERVER["REQUEST_METHOD"] == "POST"){

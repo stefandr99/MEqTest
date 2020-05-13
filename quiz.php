@@ -8,28 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="nav-container">
-        <nav class="navbar">
-            <span class="navbar-toggle" id="js-navbar-toggle">
-                <i class="fa fa-bars"></i>
-            </span>
-            <a href="index.html" class="logo">M&#931q</a>
-            <ul class="main-nav" id="js-menu">
-                <li>
-                    <a href="#" class="nav-links">Home</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-links">Problems</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-links">Forum</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-links">Login</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <?php include "navbar.php"; ?>    
+
     <div class="content">
         <div id="quiz-title"></div>
         <hr class="section-divider-bar">
@@ -44,9 +24,9 @@
                     <input id="answer-text" type="text" value="">
                 </div>
                 <div class="button-wrapper">
-                    <button class="button-regular" id="button-prev" type="button" onclick="">&lt;</button>
+                    <button class="button-regular" id="button-prev" type="button">&lt;</button>
                     <button class="button-regular" id="button-check" type="button">Check</button>
-                    <button class="button-regular" id="button-next" type="button" onclick="">&gt;</button>
+                    <button class="button-regular" id="button-next" type="button">&gt;</button>
                 </div>
             </div>
         </div>
