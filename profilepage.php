@@ -6,6 +6,7 @@
   <title>MEq</title>
   <link rel="stylesheet" type = "text/css" href="css/style_global.css">
   <link rel="stylesheet" type = "text/css" href="css/navbar.css">
+    <link rel="stylesheet" type = "text/css" href="css/profilepage.css">
 </head>
 <body>
   <?php
