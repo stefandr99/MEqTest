@@ -42,7 +42,8 @@
 }
 
 .active {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
@@ -54,11 +55,12 @@
       align-items: center;
   }
   .main-nav {
-      display: flex;
+      display: none;
       margin-right: 30px;
       flex-direction: row;
       justify-content: flex-end;
   }
+
   .main-nav li {
       margin: 0;
   }
@@ -75,4 +77,11 @@
   .nav-links:hover {
       color: rgba(255, 255, 255, 1);
   }
+}
+
+@media screen and (max-width: 767px) {
+  
+  .nav-links {
+    margin-left: 0px;
+}
 }

@@ -12,7 +12,7 @@
 
     $sql = null;
     if($postTitle == '*first*')
-        $sql = 'SELECT ID, NAME, DESCRIPTION, CREATED_AT from documents limit 10';
+        $sql = 'SELECT ID, NAME, DESCRIPTION, CREATED_AT from documents order by UPDATED_AT limit 10';
      else
         $sql = 'SELECT ID, NAME, DESCRIPTION, CREATED_AT from documents where lower(NAME) like :name';
     $stmt = BD::obtine_conexiune()->prepare($sql);

@@ -12,5 +12,6 @@
     include "navbar.php";
     include "./php/profile/profile.php";
   ?>
+<script src="js/navbar.js"></script>
 </body>
 </html>

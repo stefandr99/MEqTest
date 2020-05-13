@@ -37,4 +37,5 @@
             </div>-->
     </div>
     <script src="js/search/ajaxsearch.js"></script>
+    <script src="js/navbar.js"></script>
 </body>

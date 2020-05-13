@@ -19,7 +19,7 @@ class VPostContent
 
             echo '<div class="title-main">' . $row['NAME'] . '</div><hr class="section-divider-bar">';
             echo $row['CONTENT'];
-            if($row['QUIZCONTENT'] != null){
+            if($row['QUIZCONTENT'] != null && $row['QUIZCONTENT'] != '[]'){
                 echo '<p style="text-align: center; font-size: 30px; margin-top: 2%;">Think you got it? Then try solving the problems! </p>
                     <div style="text-align: center; align-content: center;">
                         <button class="button-regular" type="button" onclick="window.open(\'quiz.php?id=' . $row['ID'] . '\');">Practice</button>

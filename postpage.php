@@ -33,9 +33,10 @@
                         <div id="comment-preview"></div>
                         <div style="text-align: center; align-content: center;">
                             <input name="actiune" class="button-regular" type="submit" value="Post Comment" />
+                            <button style="text-align:center" class="button-regular" onclick="enablePreview(); return false;">Preview</button>
                         </div> 
                     </form>
-                    <button style="text-align:center" class="button-regular" onclick="enablePreview()">Preview</button>
+                    
                 </div>
             </div>
         
