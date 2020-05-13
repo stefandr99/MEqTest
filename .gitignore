@@ -1,4 +1,11 @@
 navbar.html
 Stuff.txt
 equation.html
-.vscode/launch.json
+.vscode
+.idea
+.idea/inspectionProfiles/Project_Default.xml
+.idea/MEq.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/sqldialects.xml
+.idea/vcs.xml
