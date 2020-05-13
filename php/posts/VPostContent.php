@@ -143,7 +143,7 @@ class VPostContent
         </body>
         <script>
             document.getElementById("subButton").onclick = function() {
-                if (document.getElementById("docContent").innerHTML.trim().length == 0) {
+                if (document.getElementById("docContent").innerHTML.trim().length === 0) {
                     alert("Please fill content as well.");
                     return false;
                 }
@@ -161,7 +161,6 @@ class VPostContent
                         reader.onload = function(e) {
                             var img = new Image();
                             img.src = e.target.result;
-                            //img.setAttribute('style', 'clear:both; margin:10px 0;');
 
                             div.appendChild(img);
                         };
