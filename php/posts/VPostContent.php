@@ -98,16 +98,16 @@ class VPostContent
             </div>
             <div style="text-align: center; align-content: center;">
                 <p>
-                    <input class="button-regular" name="docContent[]" type="file" id="image" accept="image/*" multiple="multiple" onchange="showFiles()" />
+                    <input class="button-upload-file" name="docContent[]" type="file" id="image" accept="image/*" multiple="multiple" onchange="showFiles()" />
                 </p>
                 <p>
             </div>
             </div>
+            <hr>
             <div style="text-align: center; align-content: center;">
-                <input name="upload" id="subButton" class="button-regular" type="submit" value="Upload page" />
-                <input name="docQuiz" type="text" style="display:none" id="hidden-quiz-JSON" />
+                
          </div> 
-        </form>
+        
         
 
 
@@ -117,7 +117,7 @@ class VPostContent
 
     public function viewQuizEditor()
     { ?>
-        <hr>
+        <div id="quiz-editor-title"> Quiz Editor </div>
         <div style="text-align: center; align-content: center;">
             <div id="quiz-upload-wrapper">
                 <!-- <div class="quiz-upload-entry">
@@ -134,10 +134,12 @@ class VPostContent
                 </div>-->
             </div>
 
-            <button onclick="addQuestion()">Add question</button>
+            <button class="button-add-question" onclick="addQuestion(); return false;">Add question</button>
+            <input name="upload" id="subButton" class="button-regular" type="submit" value="Upload page" />
+                <input name="docQuiz" type="text" style="display:none" id="hidden-quiz-JSON" />
         </div>
-        <hr>
-
+        <br>
+        </form>
 
         </body>
         <script>

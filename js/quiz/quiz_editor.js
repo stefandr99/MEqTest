@@ -18,13 +18,11 @@ class QuestionElement{
         this.createHTML();
     }
 
-
-
     createFileManager(){
         let fileManager = document.createElement('input');
         this.fileManager = fileManager;
 
-        this.fileManager.setAttribute('class', 'button-regular');
+        this.fileManager.setAttribute('class', 'button-upload-file');
         this.fileManager.setAttribute('type', 'file');
         this.fileManager.setAttribute('id', 'image' + this.id);
         this.fileManager.setAttribute('accept', 'image/*');
@@ -61,24 +59,31 @@ class QuestionElement{
         let mainElem = document.createElement('div');
         mainElem.className = "quiz-upload-entry";
         this.mainElem = mainElem;
+
         this.createFileManager();
+        let label = document.createElement('label');
+        label.textContent = "Figure/Image: ";
 
         let titleElem = document.createElement('input');
         titleElem.className = "quiz-upload-title";
+        titleElem.placeholder = "Question title";
 
         let descElem = document.createElement('input');
         descElem.className = "quiz-upload-desc";
+        descElem.placeholder = "Question description";
 
         let questionElem = document.createElement('input');
         questionElem.className = "quiz-upload-question";
+        questionElem.placeholder = "Question sentence";
 
         let answerElem = document.createElement('input');
         answerElem.className = "quiz-upload-answer";
+        answerElem.placeholder = "Answer";
 
         let button = document.createElement('button');
         button.innerText = 'Delete';
         button.setAttribute('value', this.id);
-        button.setAttribute('onclick', 'removeQuestion(this.value)');
+        button.setAttribute('onclick', 'removeQuestion(this.value); return false;');
         button.setAttribute('class', 'button-delete-question');
 
         this.setEventListeners();
@@ -87,6 +92,7 @@ class QuestionElement{
         mainElem.innerHTML += '<br>';
         mainElem.appendChild(descElem);
         mainElem.innerHTML += '<br>';
+        mainElem.appendChild(label);
         mainElem.appendChild(this.fileManager);
         mainElem.innerHTML += '<br>';
         mainElem.appendChild(questionElem);
