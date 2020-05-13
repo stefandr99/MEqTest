@@ -24,6 +24,11 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+DROP TABLE `comments`;
+DROP TABLE `quizzes`;
+DROP TABLE `documents`;
+DROP TABLE `users`;
+
 --
 -- Table structure for table `comments`
 --
@@ -58,6 +63,7 @@ INSERT INTO `comments` (`ID`, `ID_USER`, `ID_DOCUMENT`, `TEXT`, `created_at`, `u
 
 CREATE TABLE `documents` (
   `ID` int(11) NOT NULL,
+  `USER_ID` int(11) NOT NULL DEFAULT 1,
   `NAME` varchar(255) NOT NULL,
   `DESCRIPTION` varchar(255) NOT NULL DEFAULT 'No description available',
   `CONTENT` mediumtext NOT NULL,
@@ -106,7 +112,9 @@ CREATE TABLE `users` (
   `ID` int(11) NOT NULL,
   `USERNAME` varchar(30) NOT NULL,
   `PASSWORD` varchar(100) NOT NULL COMMENT 'password hash',
-  `IMAGE_PATH` varchar(500) DEFAULT 'data\\user\\default\\defaultavatar.png',
+  `IMAGE_PATH` longtext DEFAULT 'data\\user\\default\\defaultavatar.png',
+  `SCORE` int(5) NOT NULL DEFAULT 0,
+  `ADMIN` BOOLEAN NOT NULL DEFAULT FALSE,
   `created_at` date DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -115,12 +123,12 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`ID`, `USERNAME`, `PASSWORD`, `IMAGE_PATH`, `created_at`, `updated_at`) VALUES
-(1, 'admin', '1234', 'data\\user\\default\\defaultavatar.png', '2020-04-09', '2020-04-09 06:34:18'),
-(2, 'theLegend27', 'password', 'data\\user\\default\\defaultavatar.png', '2020-04-09', '2020-04-09 06:34:18'),
-(3, 'daigo', 'jwong', 'data\\user\\3\\avatar.png', '2020-04-09', '2020-04-09 06:34:18'),
-(4, 'something', '$2y$10$ZgqniCYSwipmtLv9wFD7BeOG2.eTBP24nGmnW/z8qb1z1fVdSYdmO', 'data\\user\\default\\defaultavatar.png', '2020-04-09', '2020-04-09 06:34:18'),
-(5, 'tudor', '$2y$10$zr9b60lhgdBalATyPXRfbugGmK3xUnidkExlMScISbxSiRF4O6DJq', 'data\\user\\default\\defaultavatar.png', '2020-04-20', '2020-04-20 13:28:16');
+INSERT INTO `users` (`ID`, `USERNAME`, `PASSWORD`, `IMAGE_PATH`, `ADMIN`, `created_at`, `updated_at`) VALUES
+(1, 'admin', '1234', 'data\\user\\default\\defaultavatar.png', TRUE, '2020-04-09', '2020-04-09 06:34:18'),
+(2, 'theLegend27', 'password', 'data\\user\\default\\defaultavatar.png', FALSE, '2020-04-09', '2020-04-09 06:34:18'),
+(3, 'daigo', 'jwong', 'data\\user\\3\\avatar.png', FALSE, '2020-04-09', '2020-04-09 06:34:18'),
+(4, 'something', '$2y$10$ZgqniCYSwipmtLv9wFD7BeOG2.eTBP24nGmnW/z8qb1z1fVdSYdmO', 'data\\user\\default\\defaultavatar.png', FALSE, '2020-04-09', '2020-04-09 06:34:18'),
+(5, 'tudor', '$2y$10$zr9b60lhgdBalATyPXRfbugGmK3xUnidkExlMScISbxSiRF4O6DJq', 'data\\user\\default\\defaultavatar.png', FALSE, '2020-04-20', '2020-04-20 13:28:16');
 
 --
 -- Indexes for dumped tables

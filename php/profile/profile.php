@@ -7,6 +7,7 @@ require_once "CProfile.php";
   if(!$_SESSION)
     session_start();
   $controller = new CProfile();
-  $controller->showProfileInfo($_GET["id"]);
+  $controller->showProfileInfo($_SESSION['userid']);
+
   BD::opreste_conexiune();
 ?>
