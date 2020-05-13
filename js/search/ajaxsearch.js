@@ -1,10 +1,10 @@
+var requestURI = '/meq/php/search/search_query.php?title=';
+
 var textBox = document.getElementById('searchbar');
 resultContainer = document.getElementById('content');
 
 var ajax = null;
 var page = 0;
-
-var requestURI = '/meq/php/search/search_ajax.php?title=';
 
 textBox.onkeyup = function() {
 	var val = this.value;
@@ -53,28 +53,38 @@ function showPosts(data) {
 }
 
 function createElement(data){
-    var content = document.getElementById("content");
-    content.appendChild(document.createElement("hr"));
-    var mainDiv = document.createElement("div");
+	let content = document.getElementById("content");
+	let bar = document.createElement("hr");
+	bar.setAttribute('class', 'search-divider-bar');
+	content.appendChild(bar);
+	
+    let mainDiv = document.createElement("div");
     mainDiv.className = "post";
     descDiv = document.createElement("div");
     descDiv.className = "post-desc";
    
-
-    var link = document.createElement("a");
+    let link = document.createElement("a");
     link.className = "post-title";
     link.href = 'postpage.php?id=' + data['ID'];
-    link.innerHTML = data['NAME'];
+    link.innerText = data['NAME'];
     descDiv.appendChild(link);
 
-    var shortDescDiv = document.createElement("div");
+    let shortDescDiv = document.createElement("div");
     shortDescDiv.className = "post-shortdesc";
-    shortDescDiv.innerHTML = data['DESCRIPTION'];
+    shortDescDiv.innerText = data['DESCRIPTION'];
     descDiv.appendChild(shortDescDiv);
 
+	let postDate = document.createElement("div");
+	postDate.className = "post-date";
+	postDate.innerText = "Posted on " + data['CREATED_AT'];
+	descDiv.appendChild(postDate);
+
     mainDiv.appendChild(descDiv);
-    content.appendChild(mainDiv);
-    content.appendChild(document.createElement("hr"));
+	content.appendChild(mainDiv);
+
+	let bar2 = document.createElement("hr");
+	bar2.setAttribute('class', 'search-divider-bar');
+    content.appendChild(bar2);
 }
 
 function clearResult() {
@@ -85,3 +95,5 @@ function clearResult() {
 function noPosts() {
 	resultContainer.innerHTML = "No Posts";
 }
+
+searchForData('*first*');

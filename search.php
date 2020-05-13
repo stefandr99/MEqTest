@@ -34,12 +34,11 @@
 
     <div class="search-container">
         <label for="fname">Search:</label>
-        <input type="text" id="searchbar" name="fname">
+        <input type="text" id="searchbar" name="fname" placeholder="Enter a title">
     </div>
 
     <div id="content">
-        <hr>
-        <div class="post">
+        <!--<div class="post">
             <div class="post-counters">
                 <div>1234 <br><div>upvotes</div></div>
                 <div>5678 <br><div>views</div></div>
@@ -49,20 +48,14 @@
                 <a href="postpage.html" class="post-title">Pythagorean Theorem</a>
                 <div class="post-shortdesc">This thing is just to preview the html...</div>
                 <div class="post-tags">
-                    <!--<div class="post-tagstext">Tags:</div>-->   
+                    <div class="post-tagstext">Tags:</div>
                     <div class="post-tagwrapper">
                         <button class="buttontag" type="button" onclick="alert('Clicked')">geometry</button>
                         <button class="buttontag" type="button" onclick="alert('Clicked')">theorem</button>
                     </div>
                 </div>
                 <div class="post-date">Posted on: 20-5-2021</div>
-            </div>
-        
-            
-        </div>
-        <hr>
-        
-        </div>
+            </div>-->
     </div>
     <script src="js/search/ajaxsearch.js"></script>
 </body>

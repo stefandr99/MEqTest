@@ -4,13 +4,14 @@ ob_start();
 
 class MPostContent{
     public function getPostContent($id_document){ 
-        $sql = 'SELECT CONTENT, NAME from documents where id = :id';
+        $sql = 'SELECT d.ID, d.CONTENT, d.NAME, q.CONTENT as QUIZCONTENT from documents d 
+        left join quizzes q on q.id_document = d.id where d.id =' . $id_document;
         $stmt = BD::obtine_conexiune()->prepare($sql);
         $stmt -> execute ([
             'id' => $id_document
         ]);
         return $stmt;
-    }
+    } 
 
     public function insertDocument($title, $content, $quiz, $userid)
     {

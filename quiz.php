@@ -44,9 +44,9 @@
                     <input id="answer-text" type="text" value="">
                 </div>
                 <div class="button-wrapper">
-                    <button class="button-regular" id="button-prev" type="button" onclick="">&lt;</button>
+                    <button class="button-regular" id="button-prev" type="button">&lt;</button>
                     <button class="button-regular" id="button-check" type="button">Check</button>
-                    <button class="button-regular" id="button-next" type="button" onclick="">&gt;</button>
+                    <button class="button-regular" id="button-next" type="button">&gt;</button>
                 </div>
             </div>
         </div>
