@@ -42,8 +42,7 @@
 }
 
 .active {
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
 @media screen and (min-width: 768px) {
@@ -55,12 +54,11 @@
       align-items: center;
   }
   .main-nav {
-      display: none;
+      display: flex;
       margin-right: 30px;
       flex-direction: row;
       justify-content: flex-end;
   }
-
   .main-nav li {
       margin: 0;
   }
@@ -80,8 +78,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  
-  .nav-links {
-    margin-left: 0px;
-}
+  .main-nav {
+    margin: 0;
+    padding: 0;
+  }
 }
