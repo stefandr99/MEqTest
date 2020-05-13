@@ -112,7 +112,7 @@ CREATE TABLE `users` (
   `ID` int(11) NOT NULL,
   `USERNAME` varchar(30) NOT NULL,
   `PASSWORD` varchar(100) NOT NULL COMMENT 'password hash',
-  `IMAGE_PATH` varchar(500) DEFAULT 'data\\user\\default\\defaultavatar.png',
+  `IMAGE_PATH` longtext DEFAULT 'data\\user\\default\\defaultavatar.png',
   `SCORE` int(5) NOT NULL DEFAULT 0,
   `ADMIN` BOOLEAN NOT NULL DEFAULT FALSE,
   `created_at` date DEFAULT current_timestamp(),
