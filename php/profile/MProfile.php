@@ -3,7 +3,7 @@
 
   class MProfile {
     public function getProfileInfo($id_user) {
-        $sql = "SELECT u.ID, USERNAME, IMAGE_PATH, SCORE, ADMIN, COUNT(USER_ID) as DOC from users u join documents d on d.USER_ID = u.ID where u.id = :id_user";
+        $sql = "SELECT u.ID, USERNAME, IMAGE_PATH, SCORE, ADMIN, COUNT(ID_USER) as DOC from users u join documents d on d.ID_USER = u.ID where u.id = :id_user";
         $request = BD::obtine_conexiune()->prepare($sql);
         $request->execute([
         'id_user' => $id_user

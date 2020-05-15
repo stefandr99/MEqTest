@@ -14,8 +14,6 @@
             $row = $this->user->fetch(PDO::FETCH_ASSOC);
             ?>
             <div class = "profile-photo">
-
-
                 <p>
                 <form action="" method="POST" enctype="multipart/form-data" onsubmit="prepareDiv();">
                     <input type="image" src="<?php echo $row['IMAGE_PATH'] ?>" alt="img" class="profile-photo" id="uploadPhoto" name="uploadPhoto" >
@@ -65,7 +63,7 @@
                                     var img = new Image();
                                     img.src = e.target.result;
 
-                                    div.value = img.src;
+                                    div.src = img.src;
                                 };
                                 reader.readAsDataURL(fi.files.item(i));
                             }

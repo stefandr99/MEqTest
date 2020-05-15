@@ -41,6 +41,13 @@ p{
     outline: none;
     border: 1px solid grey;
 }
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="textinput"]{
+      width: 98%;
+  }
+}
+
 
 .title-main {
     text-align: center; 
@@ -73,7 +80,7 @@ p{
     
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     /* For mobile phones: */
     [class*="upload-title"] {
 		text-align: center;

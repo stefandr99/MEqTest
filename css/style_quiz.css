@@ -29,6 +29,10 @@
     text-align: center;
 }
 
+#graphic-wrapper{
+    text-align: center;
+}
+
 .graphic {
     width: 100%;
     height: auto;
@@ -70,5 +74,8 @@
     #question-wrapper {
         margin-left: 5%;
         margin-right: 5%;
+    }
+    #graphic {
+        width: 100%;
     }
 }

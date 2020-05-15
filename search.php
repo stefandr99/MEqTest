@@ -36,6 +36,8 @@
                 <div class="post-date">Posted on: 20-5-2021</div>
             </div>-->
     </div>
+    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="js/search/ajaxsearch.js"></script>
     <script src="js/navbar.js"></script>
 </body>

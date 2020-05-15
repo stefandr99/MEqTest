@@ -15,7 +15,7 @@ class MPostContent{
 
     public function insertDocument($title, $content, $quiz, $user_id)
     {
-        $sql = 'INSERT INTO documents (name, user_id, description, content) values (:name, :user_id, :description, :content)';
+        $sql = 'INSERT INTO documents (name, id_user, description, content) values (:name, :user_id, :description, :content)';
         $stmt = BD::obtine_conexiune()->prepare($sql);
         if ($stmt->execute([
             'name' => $title,

@@ -22,7 +22,7 @@ class VPostContent
             if($row['QUIZCONTENT'] != null && $row['QUIZCONTENT'] != '[]'){
                 echo '<p style="text-align: center; font-size: 30px; margin-top: 2%;">Think you got it? Then try solving the problems! </p>
                     <div style="text-align: center; align-content: center;">
-                        <button class="button-regular" type="button" onclick="window.open(\'quiz.php?id=' . $row['ID'] . '\');">Practice</button>
+                        <button class="button-regular" type="button" onclick="window.location.href=(\'quiz.php?id=' . $row['ID'] . '\');">Practice</button>
                     </div>';
             }
         }
@@ -120,20 +120,8 @@ class VPostContent
         <div id="quiz-editor-title"> Quiz Editor </div>
         <div style="text-align: center; align-content: center;">
             <div id="quiz-upload-wrapper">
-                <!-- <div class="quiz-upload-entry">
-                    <label>Title:</label>
-                    <input class="quiz-upload-title" type="text" placeholder="Question title" required="required"><br>
-                    <label>Description:</label>
-                    <input class="quiz-upload-desc" type="text" placeholder="Description about the question"><br>
-                    <label>Figure:</label>
-                    <input type="text" placeholder="image..."><br>
-                    <label>Question:</label>
-                    <input class="quiz-upload-question" type="text" placeholder="Question sentence" required="required"><br>
-                    <label>Answer:</label>
-                    <input class="quiz-upload-answer" type="text" placeholder="Correct answer for the question" required="required"><br>
-                </div>-->
-            </div>
 
+            </div>
             <button class="button-add-question" onclick="addQuestion(); return false;">Add question</button>
             <input name="upload" id="subButton" class="button-regular" type="submit" value="Upload page" />
                 <input name="docQuiz" type="text" style="display:none" id="hidden-quiz-JSON" />

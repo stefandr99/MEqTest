@@ -17,7 +17,9 @@
         <div id="question-counter"></div>
         <div id="question-wrapper">
             <div id="question-desc"></div>
-            <img id="graphic" src="">
+            <div id="graphic-wrapper">
+                <img id="graphic" src="">
+            </div>
             <div id="actual-question"></div>
             <div id="answer-wrapper">
                 <div class="submit-box">
