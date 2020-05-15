@@ -63,7 +63,7 @@ INSERT INTO `comments` (`ID`, `ID_USER`, `ID_DOCUMENT`, `TEXT`, `created_at`, `u
 
 CREATE TABLE `documents` (
   `ID` int(11) NOT NULL,
-  `USER_ID` int(11) NOT NULL DEFAULT 1,
+  `ID_USER` int(11) NOT NULL DEFAULT 1,
   `NAME` varchar(255) NOT NULL,
   `DESCRIPTION` varchar(255) NOT NULL DEFAULT 'No description available',
   `CONTENT` mediumtext NOT NULL,

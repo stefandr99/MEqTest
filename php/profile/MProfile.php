@@ -21,5 +21,24 @@
         'id_user' => $id_user
         ]);
     }
+
+    public function deleteUser($id_user) {
+        $sql = "DELETE from users
+        WHERE id = :id_user";
+        $request = BD::obtine_conexiune()->prepare($sql);
+        $request->execute([
+            'id_user' => $id_user
+        ]);
+
+        $sql = "UPDATE documents
+        SET id_user = 1
+        WHERE id_user = :id_user";
+        $request = BD::obtine_conexiune()->prepare($sql);
+        $request->execute([
+            'id_user' => $id_user
+        ]);
+
+        header("location: php/userAccount/logout.php");
+    }
 }
 ?>
