@@ -2,9 +2,11 @@
 class VProfile {
 
     private $user;
+    private $idUser;
 
-    public function __construct($user) {
+    public function __construct($user, $idUser) {
         $this->user = $user;
+        $this->idUser = $idUser;
     }
 
     public function viewProfile() {
@@ -18,8 +20,10 @@ class VProfile {
                 <form action="" method="POST" enctype="multipart/form-data" onsubmit="prepareDiv();">
                     <input type="image" src="<?php echo $row['IMAGE_PATH'] ?>" alt="img" class="profile-photo" id="uploadPhoto" name="uploadPhoto" >
                     <!-- <input type="hidden" id="uploadPhoto" name="uploadPhoto"/> -->
-                    <input class="profile-choose-button" name="image" id="image" type="file" accept="image/*" multiple="multiple" onchange='loadFile(event); showFiles();' />
-                    <input name="subButton" id="subButton" class="profile-upload-button" type="submit" value="Upload photo" />
+                    <?php if($this->idUser === $_SESSION['userid']) { ?>
+                        <input class="profile-choose-button" name="image" id="image" type="file" accept="image/*" multiple="multiple" onchange='loadFile(event); showFiles();' />
+                        <input name="subButton" id="subButton" class="profile-upload-button" type="submit" value="Upload photo" />
+                    <?php } ?>
                 </form>
                 </p>
             </div>
@@ -37,9 +41,11 @@ class VProfile {
                 <?php echo $row['USERNAME'] ?>
             </div>
 
-            <form action="" method="POST" enctype="multipart/form-data" onsubmit="prepareDiv();">
-                <input name="deleteAcc" id="deleteAcc" class="delete-button" type="submit" value="Delete account" />
-            </form>
+            <?php if($this->idUser === $_SESSION['userid']) { ?>
+                <form action="" method="POST" enctype="multipart/form-data" onsubmit="prepareDiv();">
+                    <input name="deleteAcc" id="deleteAcc" class="delete-button" type="submit" value="Delete account" />
+                </form>
+            <?php } ?>
 
 
             <script>

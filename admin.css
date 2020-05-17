@@ -1,0 +1,180 @@
+#admin-panel {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.side-bar {
+    width: 250px;
+    height: 100%;
+    background-color: black;
+    float: left;
+}
+
+.admin-content {
+    width: auto;
+    margin-left: 250px;
+    height: 100%;
+    background-color: #f6f6f6;
+    padding: 15px;
+}
+
+.admin-content p {
+    color: #999999;
+    font-size: 0.73em;
+}
+
+#admin-nav {
+    height: 100%;
+}
+
+#admin-nav li {
+    list-style: none;
+}
+
+#admin-nav li a {
+    color:  rgba(255, 255, 255, 0.7);;
+    display: block;
+    padding: 12px;
+    font-size: 22px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+}
+
+#admin-nav li a:hover {
+    background-color: #352D2D;
+    color: white;
+    padding-left: 30px;
+}
+
+#admin-nav li a.selected {
+    background-color: #2E343E;
+    color: #fb2525;
+}
+
+#admin-box {
+    margin-top: 15px;
+}
+
+#admin-box .admin-box-top {
+    color: #fff;
+    text-shadow: 0px 0px 1px #000;
+    background-color: #2980b9;
+    padding: 5px;
+    padding-left: 15px;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+#admin-box .admin-box-panel {
+    padding: 15px;
+    background-color: #fff;
+    color: #645f61;
+    word-wrap: break-word;
+}
+
+.admin-box-panel-write {
+    margin-right: 50px;
+}
+
+#admin-box .check-doc {
+    width: 20px;
+    height: 20px;
+    background-color: lawngreen;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#admin-box .refuse-doc {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    margin-left: 4px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.side-bar-mobile {
+    top: 50%;
+    font-size: 30px;
+    border-radius: 15%;
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    background-color: black;
+    position: absolute;
+    position: fixed;
+}
+
+.closebtn {
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 120px;
+    padding: 7px;
+    margin-top: -10px;
+}
+
+.closebtn:hover {
+    background-color: #352D2D;
+    color: white;
+}
+
+.closebtn.selected {
+    background-color: #2E343E;
+    color: #fb2525;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .side-bar {
+        display: none;
+        width: 200px;
+        position: absolute;
+        z-index: 1;
+        margin-left: -30px;
+        margin-top: -10px;
+
+    }
+
+    #admin-nav li a {
+        padding: 8px;
+        font-size: 15px;
+    }
+
+    .admin-content {
+        margin-left: 0;
+        z-index: 2;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .side-bar-mobile {
+        display: none;
+    }
+
+    .closebtn {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

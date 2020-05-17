@@ -15,7 +15,7 @@ class CProfile
       $this->model->deleteUser($_SESSION['userid']);
     }
     $info_user = $this->model->getProfileInfo($id_user);
-    $view = new VProfile($info_user);
+    $view = new VProfile($info_user, $id_user);
     $view->viewProfile();
   }
 

@@ -67,6 +67,7 @@ CREATE TABLE `documents` (
   `NAME` varchar(255) NOT NULL,
   `DESCRIPTION` varchar(255) NOT NULL DEFAULT 'No description available',
   `CONTENT` mediumtext NOT NULL,
+  `PUBLIC` boolean NOT NULL DEFAULT FALSE,
   `created_at` date DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

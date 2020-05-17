@@ -23,7 +23,7 @@
 .profile-box {
     background-color: whitesmoke;
     position: absolute;
-    height: 55%;
+    height: 60%;
     width: 70%;
     margin: -10% 0 0 -35%;
     top: 50%;
@@ -44,9 +44,9 @@
 
 .profile-name {
     position: relative;
-    font-size: 1000%;
+    font-size: 800%;
     text-align: center;
-    margin-top: 12%;
+    margin-top: 16%;
     font-family: "Comic Sans MS", cursive, sans-serif;
     color: #645f61;
 }
@@ -64,14 +64,79 @@
     top: 50%;
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 320px) {
     /* For mobile phones: */
     [class*="profile-box"] {
         top: 30%;
+        height: 290px;
     }
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 375px) and (min-width: 321px) {
+    /* For mobile phones: */
+    [class*="profile-box"] {
+        top: 30%;
+        height: 320px;
+    }
+}
+
+@media only screen and (max-width: 425px) and (min-width: 376px) {
+    /* For mobile phones: */
+    [class*="profile-box"] {
+        top: 25%;
+        height: 360px;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+    /* For mobile phones: */
+    [class*="profile-box"] {
+        top: 25%;
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    /* For mobile phones: */
+    [class*="profile-name"] {
+        top: 30%;
+        font-size: 170%;
+        text-align: center;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 375px) and (min-width: 321px) {
+    /* For mobile phones: */
+    [class*="profile-name"] {
+        top: 25%;
+        font-size: 220%;
+        text-align: center;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 425px) and (min-width: 376px) {
+    /* For mobile phones: */
+    [class*="profile-name"] {
+        top: 22%;
+        font-size: 300%;
+        text-align: center;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+    /* For mobile phones: */
+    [class*="profile-name"] {
+        top: 17%;
+        font-size: 500%;
+        text-align: center;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 425px) {
     /* For mobile phones: */
     [class*="profile-photo"] {
         height: 40%;
@@ -79,7 +144,15 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+    /* For mobile phones: */
+    [class*="profile-photo"] {
+        height: 50%;
+        top: -4%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
     /* For mobile phones: */
     [class*="profile-stats"] {
         top: 15%;
@@ -87,13 +160,11 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) and (min-width: 426px) {
     /* For mobile phones: */
-    [class*="profile-name"] {
-        top: 30%;
-        font-size: 245%;
-        text-align: center;
-        position: relative;
+    [class*="profile-stats"] {
+        top: 15%;
+        font-size: 240%;
     }
 }
 
@@ -151,7 +222,7 @@
     text-decoration: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 320px) {
     /* For mobile phones: */
     .profile-choose-button {
         height:15px;
@@ -163,20 +234,96 @@
     }
 }
 
-@media only screen and (max-width: 768px) { /* nu stiu ce sa i mai fac, ma omoara*/
+@media only screen and (max-width: 375px) and (min-width: 321px) {
+    /* For mobile phones: */
+    .profile-choose-button {
+        height:18px;
+        margin-right: 10px;
+        font-size: 10px;
+        padding: 5px;
+        margin-left: -25%;
+        margin-top: 150%;
+    }
+}
+
+@media only screen and (max-width: 425px) and (min-width: 376px) {
+    /* For mobile phones: */
+    .profile-choose-button {
+        height:20px;
+        margin-right: 10px;
+        font-size: 12px;
+        padding: 5px;
+        margin-left: -25%;
+        margin-top: 150%;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+    /* For mobile phones: */
+    .profile-choose-button {
+        height:26px;
+        margin-right: 10px;
+        font-size: 18px;
+        padding: 5px;
+        margin-left: -10%;
+        margin-top: 120%;
+    }
+}
+
+@media only screen and (max-width: 320px) { /* nu stiu ce sa i mai fac, ma omoara*/
     /* For mobile phones: */
     .profile-upload-button {
         height:18px;
         font-size: 8px;
         margin-top: 180%;
         text-align: center;
-        margin-left: initial;
+        margin-left: 22%;
+        display: block;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width: 375px) and (min-width: 321px) { /* nu stiu ce sa i mai fac, ma omoara*/
+    /* For mobile phones: */
+    .profile-upload-button {
+        height:22px;
+        font-size: 10px;
+        margin-top: 180%;
+        text-align: center;
+        margin-left: 23%;
+        display: block;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width: 425px) and (min-width: 376px) { /* nu stiu ce sa i mai fac, ma omoara*/
+    /* For mobile phones: */
+    .profile-upload-button {
+        height:24px;
+        font-size: 12px;
+        margin-top: 180%;
+        text-align: center;
+        margin-left: 22%;
+        display: block;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 426px) { /* nu stiu ce sa i mai fac, ma omoara*/
+    /* For mobile phones: */
+    .profile-upload-button {
+        height:30px;
+        font-size: 18px;
+        margin-top: 145%;
+        text-align: center;
+        margin-left: 28%;
         display: block;
         position: absolute;
     }
 }
 
 .delete-button{
+    margin-top: 1%;
     height:27px;
     padding: 5px;
     border-radius: 2px;
@@ -201,12 +348,42 @@
     text-decoration: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 320px) {
     /* For mobile phones: */
     .delete-button {
         height:18px;
         font-size: 8px;
         padding: 5px;
         margin-top: 80%;
+    }
+}
+
+@media only screen and (max-width: 375px) and (min-width: 321px) {
+    /* For mobile phones: */
+    .delete-button {
+        height:22px;
+        font-size: 10px;
+        padding: 5px;
+        margin-top: 73%;
+    }
+}
+
+@media only screen and (max-width: 425px) and (min-width: 376px) {
+    /* For mobile phones: */
+    .delete-button {
+        height:24px;
+        font-size: 12px;
+        padding: 5px;
+        margin-top: 68%;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+    /* For mobile phones: */
+    .delete-button {
+        height:30px;
+        font-size: 18px;
+        padding: 5px;
+        margin-top: 47%;
     }
 }
