@@ -24,5 +24,6 @@ include 'php/admin/adminUsers.php';
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="js/mathjax-reset.js"></script>
 <script src="js/admin/adminPanel.js"></script>
+<script src="js/admin/user_ajaxsearch.js"></script>
 
 </body>
