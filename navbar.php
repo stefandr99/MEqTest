@@ -31,7 +31,7 @@
                 <?php } ?>
 
             <li>
-                <a href="profilepage.php?id= <?php echo $_SESSION["userid"]?>" class="nav-links">Profile</a>
+                <a href="profilepage.php?id=<?php echo $_SESSION["userid"]?>" class="nav-links">Profile</a>
             </li>
 
             <li>
