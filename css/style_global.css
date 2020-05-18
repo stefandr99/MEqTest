@@ -130,35 +130,32 @@ select {
     font: 200 12px/1.3 sans-serif;
     -webkit-appearance: none;
     appearance: none;
-    color: white;
-    border: 1px solid white;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
     line-height: 1;
     outline: 0;
     padding: 0.65em 2.5em 0.55em 0.75em;
     border-radius: 0;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     background-image: linear-gradient(white, white),
       linear-gradient(-135deg, transparent 50%, rgb(50, 50, 50) 50%),
       linear-gradient(-225deg, transparent 50%, rgb(50, 50, 50) 50%),
-      linear-gradient(rgb(50, 50, 50) 42%, black 42%);
+      linear-gradient(rgb(50, 50, 50) 42%, rgb(255, 255, 255) 42%);
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     background-size: 1px 100%, 20px 22px, 20px 22px, 20px 100%;
     background-position: right 20px center, right bottom, right bottom, right bottom;   
   }
   
   select:hover {
-    background-image: linear-gradient(black, black),
-      linear-gradient(-135deg, transparent 50%, black 50%),
-      linear-gradient(-225deg, transparent 50%, black 50%),
-      linear-gradient(black 42%, rgb(50, 50, 50) 42%);
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)),
+    linear-gradient(-135deg, transparent 50%, black 50%),
+    linear-gradient(-225deg, transparent 50%, black 50%),
+    linear-gradient(black 42%, rgb(191, 191, 191) 42%);
   }
   
   select:active {
-    background-image: linear-gradient(black, black),
-      linear-gradient(-135deg, transparent 50%, black 50%),
-      linear-gradient(-225deg, transparent 50%, black 50%),
-      linear-gradient(black 42%, rgb(50, 50, 50) 42%);
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)), linear-gradient(-135deg, transparent 50%, black 50%), linear-gradient(-225deg, transparent 50%, black 50%), linear-gradient(black 42%, rgb(255, 255, 255) 42%);
     color: rgb(50, 50, 50);
     border-color: black;
-    background-color: black;
+    background-color: #ffffff;
   }

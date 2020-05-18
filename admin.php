@@ -8,7 +8,7 @@
     <link rel="stylesheet" type = "text/css" href="css/style_comment.css" />
     <link rel="stylesheet" type = "text/css" href="css/style_global.css" />
     <link rel="stylesheet" type = "text/css" href="css/navbar.css" />
-    <link rel="stylesheet" type = "text/css" href="admin.css" />
+    <link rel="stylesheet" type = "text/css" href="css/admin.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -23,6 +23,6 @@ include 'php/admin/adminUsers.php';
 <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="js/mathjax-reset.js"></script>
-<script src="adminPanel.js"></script>
+<script src="js/admin/adminPanel.js"></script>
 
 </body>

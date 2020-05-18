@@ -1,26 +1,22 @@
 To do: 
 ## High priority: 
-* Add an editor for quizzes 
-* Create an admin panel
+* Finish profile page
+* Finish an admin panel
 
 ## Medium priority:
-* Make comment preview work properly
-* Add a button for logout
 * Add more theory pages
 
 ## Low priority:
-* Polish search page style and add additional info
 * Add 'remember me' option for sessions
 * Make register/login page style for error labels
 * Add a bunch of users to db
-* Create an API that returns basic information about an equation
 * Add a .htaccess file
 
-## Crazy stuff:
-* Make comment posting form have equation options like here https://www.codecogs.com/latex/eqneditor.php
-* Make comment posting have a preview
-
 ## Done:
+* Polish search page style and add additional info
+* Make comment preview work properly
+* Add a button for logout
+* Add an editor for quizzes
 * Find a way to upload theory pages
 * Create a WYSIWYG editor -- amazing work by Stefan
 * Load page content from database
@@ -40,4 +36,4 @@ To do:
 How to use any of this:
 
 Start a xampp server or anything of the sort that has a mysql database. Import db using the file in `/php/sql`.
-Test login using `user: something | pass: 123456`; logout by going to `php/stopsession.php`
+Test login using `user: something | pass: 123456`. 

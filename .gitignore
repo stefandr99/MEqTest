@@ -9,3 +9,4 @@ equation.html
 .idea/modules.xml
 .idea/sqldialects.xml
 .idea/vcs.xml
+php/config.php

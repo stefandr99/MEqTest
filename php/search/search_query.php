@@ -3,18 +3,14 @@
     require_once '../db_utils/database_conn.php';
 
     $postTitle = $_GET['title'];
-    $startFrom = $_GET['page'];
-
-    $username = trim(htmlspecialchars($postTitle));
-    $startFrom = filter_var($startFrom, FILTER_VALIDATE_INT);
-
-    $like = '%' . strtolower($postTitle) . '%';
+   
+    $like = '%' . strtolower(trim(htmlspecialchars($postTitle))) . '%';
 
     $sql = null;
     if($postTitle == '*first*')
-        $sql = 'SELECT ID, NAME, DESCRIPTION, CREATED_AT from documents order by UPDATED_AT limit 10';
+        $sql = 'SELECT ID, NAME, DESCRIPTION, CREATED_AT from documents where public=true order by UPDATED_AT limit 10';
      else
-        $sql = 'SELECT ID, NAME, DESCRIPTION, CREATED_AT from documents where lower(NAME) like :name';
+        $sql = 'SELECT ID, NAME, DESCRIPTION, CREATED_AT from documents where lower(NAME) like :name and public=true';
     $stmt = BD::obtine_conexiune()->prepare($sql);
     $stmt -> execute ([
         'name' => $like

@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . "/../db_utils/database_conn.php";
+require_once __DIR__ . "/UserRoles.php";
+
 
 class MUser {
 
@@ -36,7 +38,7 @@ class MUser {
 
 
     public function autentificaUser($username_, $password_) {
-        $sql = 'SELECT id, username, password FROM users WHERE username = :username';
+        $sql = 'SELECT id, username, password, role FROM users WHERE username = :username';
         
         $stmt = BD::obtine_conexiune()->prepare($sql);
         $stmt -> execute ([
@@ -52,12 +54,15 @@ class MUser {
         if($temp_username != null){                 
             if(password_verify($password_, $temp_pass)){
                     session_start();
-
-                    $_SESSION["loggedin"] = true;
-                    $_SESSION["userid"] = $temp_id;
-                    $_SESSION["username"] = $temp_username;
+                    
+                    $_SESSION['role'] = $array['role'];
+                    $_SESSION['loggedin'] = true;
+                    $_SESSION['userid'] = $temp_id;
+                    $_SESSION['username'] = $temp_username;
                     $_SESSION['start'] = time();
-                    $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);                       
+                    $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);    
+                    
+                    
 
                     header("location: ../../index.html");
             } else{

@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . "/../userAccount/UserRoles.php";
+
 class VPostContent
 {
     private $data;
@@ -10,12 +12,20 @@ class VPostContent
 
     public function viewPostContent()
     {
-        if ($this->data->rowcount() === 0) { //when this if is triggered it means the page doesn't exist
+        if ($this->data->rowcount() == 0) { //page doesn't exist
             echo '<div class="title-main">Post not found</div><hr class="section-divider-bar">';
             BD::opreste_conexiune();
             exit();
         } else {
             $row = $this->data->fetch(PDO::FETCH_ASSOC);
+            
+            //show private documents only to admins
+            if ($row['PUBLIC'] == false && ( !isset($_SESSION['role']) || $_SESSION['role'] != UserRoles::ADMIN) ){
+                echo '<div class="title-main">Post is private</div><hr class="section-divider-bar">';
+                BD::opreste_conexiune();
+                exit();
+            }
+            
 
             echo '<div class="title-main">' . $row['NAME'] . '</div><hr class="section-divider-bar">';
             echo $row['CONTENT'];
@@ -59,6 +69,9 @@ class VPostContent
                 <input class="fa fa-list-ol" name="insertOrderedList" type="button" value="&#xf0cb" onclick="execCmd('insertOrderedList')">
                 <input class="fa fa-paragraph" name="insertParagraph" type="button" value="&#xf1dd" onclick="execCmd('insertParagraph')">
                 <input class="fa fa-bold" name="insertHorizontalRule" type="button" value="HR" onclick="execCmd('insertHorizontalRule')">
+                <input class="fa fa-bold" name="insertLatex" type="button" value="TeX" onclick="execCmdWithArgument('insertText', '$$ 1+1=2 $$')">
+                <input class="fa fa-bold" name="renderLatex" type="button" value="TeX-Render" onclick="MathJax.Hub.Typeset()">
+                <input class="fa fa-bold" name="renderLatex" type="button" value="Reset" onclick="execCmd('removeFormat')">
                 <br>
                 <select onclick="execCmdWithArgument('formatBlock', this.value)">
                     <option value="H1">H1</option>
