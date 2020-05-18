@@ -69,8 +69,8 @@ function createElement(data){
     let box = document.createElement('div');
     box.setAttribute('class', 'admin-box');
 
-    let content = '<div class="admin-box-top">' + data['USERNAME'] +
-                    '</div><div class="admin-box-panel">' + data['ID'] + '</div>';
+    let content = '<a class="profile-link" href="profilepage.php?id=' + data['ID'] + '"><div class="admin-box-top">' + data['USERNAME'] +
+                    '</div></a><div class="admin-box-panel"> id: ' + data['ID'] + '</div>';
 
     box.innerHTML = content;
     resultContainer.appendChild(box);
