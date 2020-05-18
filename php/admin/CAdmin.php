@@ -4,20 +4,27 @@ class CAdmin {
     private $model;
 
     public function __construct($action, $decision, $idDoc) {
-        $this->model = new MAdmin();
+        if (isset($_SESSION['role']) && $_SESSION['role'] == UserRoles::ADMIN){
+            $this->model = new MAdmin();
+            
+            if($action === 'showDocuments') {
+                if($decision !== null && $idDoc !== null) {
 
-        if($action === 'showDocuments') {
-            if($decision !== null && $idDoc !== null) {
-
-                $this->model->handleDocument($decision, $idDoc);
+                    $this->model->handleDocument($decision, $idDoc);
+                }
+                $docs = $this->model->showDocuments();
+                $view = new VAdmin($docs);
+                $view->display();
             }
-            $docs = $this->model->showDocuments();
-            $view = new VAdmin($docs);
-            $view->display();
+            else {
+                $view = new VAdmin(null);
+                $view->displayUserSearch();
+            }
         }
         else {
-            $view = new VAdmin(null);
-            $view->display();
+            header("location: index.html");
+
         }
     }
+    
 }

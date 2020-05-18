@@ -156,6 +156,12 @@
 
     }
 
+    .search-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
     #admin-nav li a {
         padding: 8px;
         font-size: 15px;
