@@ -116,14 +116,15 @@ require_once "User.php";
 
                 if(!empty($facebook_user_info['id']))
                 {
-                    $photo = 'http://graph.facebook.com/'.$facebook_user_info['id'].'/picture';
+                    $this->photo = 'http://graph.facebook.com/'.$facebook_user_info['id'].'/picture';
                 }
 
                 if(!empty($facebook_user_info['name']))
                 {
-                    $username = str_replace(' ', '', $facebook_user_info['name']);
+                    $this->username = str_replace(' ', '', $facebook_user_info['name']);
                 }
-                $this->model->autentificaSocial($username, $photo);
+                print_r($facebook_user_info);
+                $this->model->autentificaSocial($this->username, $this->photo);
             }
             else {
                 if (empty(trim($_POST["username"]))) {
