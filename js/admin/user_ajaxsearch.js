@@ -1,4 +1,4 @@
-var requestURI = '/meq/php/admin/user_query.php?';
+var requestURI = '/php/admin/user_query.php?';
 
 var textBoxName = document.getElementById('searchbar-name');
 var textBoxId = document.getElementById('searchbar-id');

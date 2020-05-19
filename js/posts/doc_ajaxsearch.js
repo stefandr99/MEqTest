@@ -1,4 +1,4 @@
-var requestURI = '/meq/php/search/search_query.php?title=';
+var requestURI = '/php/search/search_query.php?title=';
 
 var textBox = document.getElementById('searchbar');
 resultContainer = document.getElementById('content');
