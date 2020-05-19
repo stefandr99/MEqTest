@@ -21,7 +21,7 @@ h1 {
   position: absolute;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
-  padding: 70px 30px;
+  padding: 40px 30px;
 }
 
 .login-container p {
@@ -55,7 +55,7 @@ h1 {
   border: none;
   outline: none;
   height: 40px;
-  background: #fb2525;
+  background: #de1f00;
   color: white;
   font-size: 18px;
   border-radius: 20px;
@@ -77,6 +77,27 @@ h1 {
 .login-container a:hover {
   color: yellow;
 }
+
+.google-bar {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.google-bar::before, .google-bar::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #fff;
+}
+
+.google-bar::before {
+  margin-right: .25em;
+}
+.google-bar::after {
+  margin-left: .25em;
+}
+
+
 
 /*Overwrite browsers css for autofill*/
 input:-webkit-autofill,

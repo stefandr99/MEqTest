@@ -1,14 +1,18 @@
 <?php 
 require_once "MUser.php";
-require_once "CUser.php"; 
-
-    class VUser {
+require_once "CUser.php";
+require_once 'vendor/autoload.php';
+require_once "User.php";
+    class VUser extends User {
         private $username_err, $password_err, $confirm_password_err;
 
         public function __construct() {
+            parent::__construct();
             $this->username_err = func_get_arg(0);
             $this->password_err = func_get_arg(1);
             $this->confirm_password_err = func_get_arg(2);
+
+
         }
 
     
@@ -41,6 +45,10 @@ require_once "CUser.php";
                 <input type="submit" name="" value="Sign Up">
                 <a href="login.php">Already have an account?</a>
                 </form>
+
+
+                <h4 style="text-align: center">OR</h4>
+                <a href="<?php echo $this->google_client->createAuthUrl()?>"><img src="google.png" style="border-radius: 8px; width: 90%; margin-left: 15px;"/></a>
             </div>
             </body>
             </html>
@@ -74,6 +82,9 @@ require_once "CUser.php";
                 <a href="#">Forgot your password?</a><br>
                 <a href="register.php">Don't have an account?</a>
                 </form>
+
+                <h4 style="text-align: center">OR</h4>
+                <a href="<?php echo $this->google_client->createAuthUrl()?>"><img src="google.png" style="border-radius: 8px; width: 90%; margin-left: 15px;"/></a>
             </div>
             </body>
             </html>

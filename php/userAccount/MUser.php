@@ -92,6 +92,68 @@ class MUser {
         }
     }
 
+    public function autentificaGoogle($username, $photo) {
+        $sql = 'SELECT id FROM users WHERE username = :username';
+        $stmt = BD::obtine_conexiune()->prepare($sql);
+        $stmt -> execute ([
+            'username' => $username
+        ]);
+        if($number_of_rows = $stmt->fetchColumn() == 0) {
+            $query = 'select max(id) as maxid from users';
+            $stmt2 = BD::obtine_conexiune()->prepare($query);
+
+            $stmt2 -> execute();
+            $response = $stmt2->fetch();
+
+            $newid = $response["maxid"] + 1;
+
+            $sql = 'INSERT INTO users (id, username, image_path, created_at, updated_at) VALUES (:id, :username, :image_path, sysdate(), sysdate())';
+            $stmt = BD::obtine_conexiune()->prepare($sql);
+
+            if($stmt -> execute ([
+                'id' => $newid,
+                'username' => $username,
+                'image_path' => $photo ])) {
+
+                $_SESSION['role'] = 0;
+                $_SESSION["loggedin"] = true;
+                $_SESSION["userid"] = $newid;
+                $_SESSION["username"] = $username;
+                $_SESSION['start'] = time();
+                $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);
+
+                header("location: ../../index.html");
+            }
+            else {
+                echo "Something went wrong. Please try again later." . $photo;
+            }
+        }
+        else {
+            $sql = 'SELECT id, username, role FROM users WHERE username = :username';
+
+            $stmt = BD::obtine_conexiune()->prepare($sql);
+            $stmt -> execute ([
+                'username' => $username
+            ]);
+
+            $array = $stmt->fetch(PDO::FETCH_ASSOC);
+            $temp_username = $array['username'];
+            $temp_id = $array['id'];
+
+            if($temp_username != null){
+                    session_start();
+
+                    $_SESSION['role'] = $array['role'];
+                    $_SESSION['loggedin'] = true;
+                    $_SESSION['userid'] = $temp_id;
+                    $_SESSION['username'] = $temp_username;
+                    $_SESSION['start'] = time();
+                    $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);
+
+                    header("location: ../../index.html");
+            }
+        }
+    }
 }
 
 
