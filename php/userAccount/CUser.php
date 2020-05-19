@@ -104,27 +104,26 @@ require_once "User.php";
                         $photo = $data['picture'];
                     }
                 }
+                else {
+                    $access_token = $this->facebook_helper->getAccessToken();
+
+                    $this->facebook->setDefaultAccessToken($access_token);
+
+                    $graph_response = $this->facebook->get("/me?fields=name,email", $access_token);
+
+                    $facebook_user_info = $graph_response->getGraphUser();
+
+                    if(!empty($facebook_user_info['id']))
+                    {
+                        $photo = 'http://graph.facebook.com/'.$facebook_user_info['id'].'/picture';
+                    }
+
+                    if(!empty($facebook_user_info['name']))
+                    {
+                        $username = str_replace(' ', '', $facebook_user_info['name']);
+                    }
+                }
                 $this->model->autentificaSocial($username, $photo);
-            }
-            elseif ($access_token = $this->facebook_helper->getAccessToken()) {
-
-                $this->facebook->setDefaultAccessToken($access_token);
-
-                $graph_response = $this->facebook->get("/me?fields=name,email", $access_token);
-
-                $facebook_user_info = $graph_response->getGraphUser();
-
-                if(!empty($facebook_user_info['id']))
-                {
-                    $this->photo = 'http://graph.facebook.com/'.$facebook_user_info['id'].'/picture';
-                }
-
-                if(!empty($facebook_user_info['name']))
-                {
-                    $this->username = str_replace(' ', '', $facebook_user_info['name']);
-                }
-                print_r($facebook_user_info);
-                $this->model->autentificaSocial($this->username, $this->photo);
             }
             else {
                 if (empty(trim($_POST["username"]))) {
